@@ -1,86 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Freedman Broker | Premium Insurance Solutions</title>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Freedman Broker Insurance | Trusted Coverage</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#0f172a',    // Very dark slate/navy
+                            blue: '#1e3a8a',    // Deep classic blue
+                            gold: '#bf953f',    // Elegant gold
+                            light: '#fcfbf9',   // Off-white/cream
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background-color: #ffffff; color: #333333; }
-        .text-brand { color: #1e3a8a; }
-        .bg-brand { background-color: #1e3a8a; }
-        .hover-bg-brand:hover { background-color: #1e3a8a; color: white; }
+        body { background-color: #fcfbf9; }
+        .heading-serif { font-family: 'Playfair Display', serif; }
+        .gold-accent { color: #bf953f; }
+        .bg-gold-accent { background-color: #bf953f; }
+        .border-gold-accent { border-color: #bf953f; }
+        .nav-link { position: relative; transition: color 0.3s ease; }
+        .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; left: 0; background-color: #bf953f; transition: width 0.3s ease; }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+        .nav-link:hover { color: #bf953f; }
     </style>
+
 </head>
 <body class="antialiased flex flex-col min-h-screen">
 
     <!-- Top Bar -->
-    <div class="bg-gray-100 text-sm py-2 px-4 sm:px-6 lg:px-8 flex justify-between items-center text-gray-600">
-        <div class="flex space-x-4">
-            <span><i class="fas fa-phone-alt mr-2"></i>1-800-555-0199</span>
-            <span class="hidden sm:inline"><i class="fas fa-envelope mr-2"></i>info@freedmanbrokerinsurance.com</span>
+    <div class="bg-brand-navy text-gray-300 text-xs sm:text-sm py-2 px-4 sm:px-6 lg:px-8 flex justify-between items-center border-b border-gray-800">
+        <div class="flex space-x-6">
+            <span class="flex items-center"><i class="fas fa-phone-alt mr-2 gold-accent"></i> 1-800-555-0199</span>
+            <span class="hidden sm:flex items-center"><i class="fas fa-envelope mr-2 gold-accent"></i> info@freedmanbroker.com</span>
         </div>
-        <div class="flex space-x-4">
-            <a href="#" class="hover:text-brand transition"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="hover:text-brand transition"><i class="fab fa-linkedin-in"></i></a>
+        <div class="flex space-x-5">
+            <a href="#" class="hover:text-brand-gold transition-colors duration-300"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="hover:text-brand-gold transition-colors duration-300"><i class="fab fa-twitter"></i></a>
         </div>
     </div>
 
     <!-- Main Navigation -->
     <header class="bg-white shadow-sm sticky top-0 z-50" x-data="{ mobileMenuOpen: false }">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
+            <div class="flex justify-between items-center h-24">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="index.html" class="text-2xl font-bold text-brand tracking-tight flex items-center">
-                        <i class="fas fa-shield-alt text-3xl mr-2"></i> Freedman Broker
+                    <a href="index.html" class="flex items-center group">
+                        <div class="w-10 h-10 bg-brand-navy flex items-center justify-center rounded-sm mr-3 group-hover:bg-brand-gold transition-colors duration-300">
+                            <i class="fas fa-shield-alt text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-brand-navy tracking-tight heading-serif leading-none">Freedman Broker</div>
+                            <div class="text-[0.65rem] uppercase tracking-[0.2em] text-gray-500 mt-1">Premium Insurance Services</div>
+                        </div>
                     </a>
                 </div>
 
                 <!-- Desktop Menu -->
-                <nav class="hidden md:flex space-x-8 h-full">
+                <nav class="hidden md:flex space-x-8 h-full items-center">
+                    <a href="index.html" class="text-gray-800 font-medium text-sm uppercase tracking-wide nav-link active">Home</a>
                     
                     <!-- Personal Dropdown -->
                     <div class="relative flex items-center h-full group" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
-                        <a href="personal-insurance.html" class="text-gray-700 hover:text-brand font-semibold flex items-center h-full">
-                            Personal Insurance <i class="fas fa-chevron-down text-xs ml-1 mt-1 transition-transform group-hover:rotate-180"></i>
+                        <a href="personal-insurance.html" class="text-gray-800 font-medium text-sm uppercase tracking-wide nav-link flex items-center ">
+                            Personal <i class="fas fa-chevron-down text-[0.6rem] ml-1.5 mt-0.5 text-gray-400 group-hover:text-brand-gold transition-colors"></i>
                         </a>
-                        <div x-show="open" x-transition.opacity class="absolute top-full left-0 w-56 bg-white shadow-lg border-t border-gray-100 rounded-b-md overflow-hidden">
-                            <a href="personal-insurance.html#auto" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand border-b border-gray-50">Auto Insurance</a>
-                            <a href="personal-insurance.html#home" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand border-b border-gray-50">Home Insurance</a>
-                            <a href="personal-insurance.html#life" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand border-b border-gray-50">Life & Health</a>
-                            <a href="personal-insurance.html#travel" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand">Travel Insurance</a>
+                        <div x-show="open" x-transition.opacity.duration.200ms class="absolute top-[80%] left-0 w-64 bg-white shadow-xl border border-gray-100 rounded-sm overflow-hidden py-2 z-50" style="display: none;">
+                            <a href="personal-insurance.html#auto" class="block px-6 py-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-brand-navy hover:pl-8 transition-all duration-300">Automobile Insurance</a>
+                            <a href="personal-insurance.html#home" class="block px-6 py-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-brand-navy hover:pl-8 transition-all duration-300">Home & Estate</a>
+                            <a href="personal-insurance.html#life" class="block px-6 py-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-brand-navy hover:pl-8 transition-all duration-300">Life & Health</a>
+                            <a href="personal-insurance.html#travel" class="block px-6 py-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-brand-navy hover:pl-8 transition-all duration-300">Travel Coverage</a>
                         </div>
                     </div>
 
                     <!-- Commercial Dropdown -->
                     <div class="relative flex items-center h-full group" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
-                        <a href="commercial-insurance.html" class="text-gray-700 hover:text-brand font-semibold flex items-center h-full">
-                            Commercial Insurance <i class="fas fa-chevron-down text-xs ml-1 mt-1 transition-transform group-hover:rotate-180"></i>
+                        <a href="commercial-insurance.html" class="text-gray-800 font-medium text-sm uppercase tracking-wide nav-link flex items-center ">
+                            Commercial <i class="fas fa-chevron-down text-[0.6rem] ml-1.5 mt-0.5 text-gray-400 group-hover:text-brand-gold transition-colors"></i>
                         </a>
-                        <div x-show="open" x-transition.opacity class="absolute top-full left-0 w-56 bg-white shadow-lg border-t border-gray-100 rounded-b-md overflow-hidden">
-                            <a href="commercial-insurance.html#liability" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand border-b border-gray-50">Commercial Liability</a>
-                            <a href="commercial-insurance.html#property" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand border-b border-gray-50">Commercial Property</a>
-                            <a href="commercial-insurance.html#contractors" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 hover:text-brand">Contractors</a>
+                        <div x-show="open" x-transition.opacity.duration.200ms class="absolute top-[80%] left-0 w-64 bg-white shadow-xl border border-gray-100 rounded-sm overflow-hidden py-2 z-50" style="display: none;">
+                            <a href="commercial-insurance.html#liability" class="block px-6 py-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-brand-navy hover:pl-8 transition-all duration-300">General Liability</a>
+                            <a href="commercial-insurance.html#property" class="block px-6 py-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-brand-navy hover:pl-8 transition-all duration-300">Commercial Property</a>
+                            <a href="commercial-insurance.html#contractors" class="block px-6 py-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-brand-navy hover:pl-8 transition-all duration-300">Contractors & Trades</a>
+                            <a href="commercial-insurance.html#fleet" class="block px-6 py-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-brand-navy hover:pl-8 transition-all duration-300">Fleet & Auto</a>
                         </div>
                     </div>
 
-                    <a href="about-us.html" class="text-gray-700 hover:text-brand font-semibold flex items-center h-full">About Us</a>
-                    <a href="contact.html" class="text-gray-700 hover:text-brand font-semibold flex items-center h-full">Contact</a>
+                    <a href="about-us.html" class="text-gray-800 font-medium text-sm uppercase tracking-wide nav-link ">Our Firm</a>
+                    <a href="contact.html" class="text-gray-800 font-medium text-sm uppercase tracking-wide nav-link ">Contact</a>
                 </nav>
 
                 <!-- CTA Button -->
                 <div class="hidden md:flex items-center">
-                    <a href="contact.html" class="bg-brand hover:bg-blue-800 text-white px-6 py-2 rounded font-medium transition shadow">
-                        Request a Quote
+                    <a href="contact.html" class="bg-brand-navy hover:bg-brand-gold text-white px-7 py-2.5 rounded-sm font-medium text-sm tracking-wide transition-colors duration-300 shadow-md">
+                        Request Quote
                     </a>
                 </div>
 
                 <!-- Mobile menu button -->
                 <div class="flex items-center md:hidden">
-                    <button @click="mobileMenuOpen = !mobileMenuOpen" type="button" class="text-gray-500 hover:text-gray-900 focus:outline-none">
+                    <button @click="mobileMenuOpen = !mobileMenuOpen" type="button" class="text-brand-navy hover:text-brand-gold focus:outline-none transition-colors">
                         <i class="fas fa-bars text-2xl" x-show="!mobileMenuOpen"></i>
                         <i class="fas fa-times text-2xl" x-show="mobileMenuOpen" x-cloak></i>
                     </button>
@@ -89,196 +127,172 @@
         </div>
 
         <!-- Mobile Menu -->
-        <div x-show="mobileMenuOpen" class="md:hidden bg-white border-t border-gray-200" x-transition>
-            <div class="px-2 pt-2 pb-3 space-y-1">
-                <a href="personal-insurance.html" class="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50">Personal Insurance</a>
-                <a href="commercial-insurance.html" class="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50">Commercial Insurance</a>
-                <a href="about-us.html" class="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50">About Us</a>
-                <a href="contact.html" class="block px-3 py-2 text-base font-medium text-gray-900 hover:bg-gray-50">Contact</a>
-                <a href="contact.html" class="block px-3 py-2 text-base font-medium text-brand font-bold">Request a Quote</a>
+        <div x-show="mobileMenuOpen" class="md:hidden bg-white border-t border-gray-100 shadow-inner absolute w-full z-50" x-transition style="display: none;">
+            <div class="px-4 pt-4 pb-6 space-y-2">
+                <a href="index.html" class="block px-3 py-3 text-sm uppercase tracking-wide font-medium text-gray-900 hover:bg-gray-50 border-l-2 border-transparent hover:border-brand-gold">Home</a>
+                <a href="personal-insurance.html" class="block px-3 py-3 text-sm uppercase tracking-wide font-medium text-gray-900 hover:bg-gray-50 border-l-2 border-transparent hover:border-brand-gold">Personal Insurance</a>
+                <a href="commercial-insurance.html" class="block px-3 py-3 text-sm uppercase tracking-wide font-medium text-gray-900 hover:bg-gray-50 border-l-2 border-transparent hover:border-brand-gold">Commercial Insurance</a>
+                <a href="about-us.html" class="block px-3 py-3 text-sm uppercase tracking-wide font-medium text-gray-900 hover:bg-gray-50 border-l-2 border-transparent hover:border-brand-gold">Our Firm</a>
+                <a href="contact.html" class="block px-3 py-3 text-sm uppercase tracking-wide font-medium text-gray-900 hover:bg-gray-50 border-l-2 border-transparent hover:border-brand-gold">Contact</a>
             </div>
         </div>
     </header>
 
+
     <!-- Hero Section -->
-    <section class="relative bg-gray-50">
+    <section class="relative bg-brand-navy min-h-[85vh] flex items-center">
         <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Insurance Professional" class="w-full h-full object-cover opacity-20">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Corporate Architecture" class="w-full h-full object-cover opacity-20 mix-blend-luminosity">
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/90 to-transparent"></div>
         </div>
-        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 flex flex-col md:flex-row items-center">
-            <div class="md:w-3/5 text-center md:text-left">
-                <span class="text-brand font-bold tracking-wider uppercase text-sm mb-4 block">Trusted Insurance Brokers Since 1995</span>
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight mb-6">
-                    Insurance made easy. <br>
-                    <span class="text-brand">We're the Experts.</span>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-20">
+            <div class="md:w-2/3 lg:w-1/2">
+                <div class="flex items-center mb-6">
+                    <div class="w-12 h-[1px] bg-brand-gold mr-4"></div>
+                    <span class="text-brand-gold font-medium tracking-[0.2em] uppercase text-xs">Excellence in Protection</span>
+                </div>
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-8 heading-serif">
+                    Protecting What <br>
+                    <span class="italic text-gray-300 font-light">Matters Most.</span>
                 </h1>
-                <p class="text-lg md:text-xl text-gray-700 mb-8 max-w-2xl mx-auto md:mx-0 font-medium">
-                    Unlike traditional brokers who see only account numbers, we take the time to get to know you personally and find the perfect plan tailored to your needs.
+                <p class="text-lg md:text-xl text-gray-300 mb-10 font-light leading-relaxed max-w-lg">
+                    Bespoke insurance portfolios crafted with precision for discerning individuals and established enterprises.
                 </p>
-                <div class="flex flex-col sm:flex-row justify-center md:justify-start space-y-4 sm:space-y-0 sm:space-x-4">
-                    <a href="contact.html" class="bg-brand hover:bg-blue-800 text-white px-8 py-3 rounded font-semibold text-lg transition shadow-lg inline-flex justify-center items-center">
-                        Request a Quote <i class="fas fa-arrow-right ml-2"></i>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
+                    <a href="contact.html" class="bg-brand-gold hover:bg-yellow-600 text-white px-8 py-4 rounded-sm font-medium text-sm uppercase tracking-wider transition-colors duration-300 text-center shadow-lg">
+                        Consult an Advisor
                     </a>
-                    <a href="about-us.html" class="bg-white border-2 border-brand text-brand hover:bg-gray-50 px-8 py-3 rounded font-semibold text-lg transition inline-flex justify-center items-center">
-                        Why Choose Us
+                    <a href="about-us.html" class="bg-transparent border border-gray-500 text-white hover:border-white hover:bg-white/5 px-8 py-4 rounded-sm font-medium text-sm uppercase tracking-wider transition-all duration-300 text-center">
+                        Our Philosophy
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Trust Indicators (Logos) -->
-    <section class="py-10 border-b border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p class="text-sm text-gray-500 font-semibold uppercase tracking-wider mb-6">Partnering with Canada's Leading Providers</p>
-            <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale">
-                <!-- Placeholder logos -->
-                <div class="text-xl font-bold flex items-center"><i class="fas fa-umbrella mr-2"></i> Intact</div>
-                <div class="text-xl font-bold flex items-center"><i class="fas fa-shield-virus mr-2"></i> Aviva</div>
-                <div class="text-xl font-bold flex items-center"><i class="fas fa-leaf mr-2"></i> Wawanesa</div>
-                <div class="text-xl font-bold flex items-center"><i class="fas fa-building mr-2"></i> Northbridge</div>
-                <div class="text-xl font-bold flex items-center"><i class="fas fa-car-crash mr-2"></i> Economical</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="py-20 bg-white">
+    <!-- Expertise Section -->
+    <section class="py-24 bg-brand-light">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Comprehensive Coverage Solutions</h2>
-                <div class="w-24 h-1 bg-brand mx-auto mb-6"></div>
-                <p class="text-lg text-gray-600 max-w-2xl mx-auto">From your family car to your corporate headquarters, we offer tailored policies to protect everything you value.</p>
+                <span class="text-brand-gold font-medium tracking-[0.2em] uppercase text-xs block mb-4">Our Expertise</span>
+                <h2 class="text-4xl font-bold text-brand-navy heading-serif mb-6">Comprehensive Portfolios</h2>
+                <div class="w-16 h-0.5 bg-brand-gold mx-auto"></div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16">
                 <!-- Personal Card -->
-                <div class="bg-white rounded-lg shadow-xl border border-gray-100 overflow-hidden group">
-                    <div class="h-64 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Personal Insurance" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-80"></div>
-                        <div class="absolute bottom-6 left-6 right-6">
-                            <h3 class="text-3xl font-bold text-white mb-2">Personal Insurance</h3>
-                            <p class="text-gray-200">Protecting your home, vehicles, and family's future.</p>
-                        </div>
+                <div class="group cursor-pointer">
+                    <div class="relative h-80 overflow-hidden rounded-sm mb-6 shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Luxury Home" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-brand-navy/20 group-hover:bg-transparent transition-colors duration-500"></div>
                     </div>
-                    <div class="p-8">
-                        <ul class="space-y-3 mb-8">
-                            <li class="flex items-center text-gray-700"><i class="fas fa-check text-brand mr-3"></i> Home & Condo Insurance</li>
-                            <li class="flex items-center text-gray-700"><i class="fas fa-check text-brand mr-3"></i> Auto Insurance</li>
-                            <li class="flex items-center text-gray-700"><i class="fas fa-check text-brand mr-3"></i> Life & Health</li>
-                            <li class="flex items-center text-gray-700"><i class="fas fa-check text-brand mr-3"></i> Travel & Recreation</li>
-                        </ul>
-                        <a href="personal-insurance.html" class="block w-full text-center border-2 border-brand text-brand hover:bg-brand hover:text-white font-semibold py-3 rounded transition">
-                            Explore Personal Coverage
-                        </a>
+                    <div class="pr-8">
+                        <h3 class="text-2xl font-bold text-brand-navy heading-serif mb-3 flex items-center">
+                            Personal Lines <i class="fas fa-arrow-right ml-4 text-brand-gold text-sm opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300"></i>
+                        </h3>
+                        <p class="text-gray-600 leading-relaxed mb-4">Curated protection for high-value properties, luxury vehicles, and comprehensive family legacy planning.</p>
+                        <a href="personal-insurance.html" class="text-sm font-semibold uppercase tracking-wider text-brand-gold hover:text-brand-navy transition-colors">Explore Personal</a>
                     </div>
                 </div>
 
                 <!-- Commercial Card -->
-                <div class="bg-white rounded-lg shadow-xl border border-gray-100 overflow-hidden group">
-                    <div class="h-64 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Commercial Insurance" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-80"></div>
-                        <div class="absolute bottom-6 left-6 right-6">
-                            <h3 class="text-3xl font-bold text-white mb-2">Commercial Insurance</h3>
-                            <p class="text-gray-200">Customized risk management for businesses of all sizes.</p>
-                        </div>
+                <div class="group cursor-pointer">
+                    <div class="relative h-80 overflow-hidden rounded-sm mb-6 shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Corporate Office" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-brand-navy/20 group-hover:bg-transparent transition-colors duration-500"></div>
                     </div>
-                    <div class="p-8">
-                        <ul class="space-y-3 mb-8">
-                            <li class="flex items-center text-gray-700"><i class="fas fa-check text-brand mr-3"></i> Commercial General Liability</li>
-                            <li class="flex items-center text-gray-700"><i class="fas fa-check text-brand mr-3"></i> Commercial Property</li>
-                            <li class="flex items-center text-gray-700"><i class="fas fa-check text-brand mr-3"></i> Contractors Insurance</li>
-                            <li class="flex items-center text-gray-700"><i class="fas fa-check text-brand mr-3"></i> Directors & Officers</li>
-                        </ul>
-                        <a href="commercial-insurance.html" class="block w-full text-center border-2 border-brand text-brand hover:bg-brand hover:text-white font-semibold py-3 rounded transition">
-                            Explore Commercial Coverage
-                        </a>
+                    <div class="pr-8">
+                        <h3 class="text-2xl font-bold text-brand-navy heading-serif mb-3 flex items-center">
+                            Commercial Lines <i class="fas fa-arrow-right ml-4 text-brand-gold text-sm opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300"></i>
+                        </h3>
+                        <p class="text-gray-600 leading-relaxed mb-4">Sophisticated risk mitigation strategies for enterprises, real estate portfolios, and executive liability.</p>
+                        <a href="commercial-insurance.html" class="text-sm font-semibold uppercase tracking-wider text-brand-gold hover:text-brand-navy transition-colors">Explore Commercial</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="py-20 bg-gray-50 border-t border-gray-200">
+    <!-- Trust Banner -->
+    <section class="py-16 bg-white border-y border-gray-100">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Advocates</h2>
-                <div class="w-24 h-1 bg-brand mx-auto"></div>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-lg shadow border border-gray-100">
-                    <div class="text-brand text-4xl mb-4"><i class="fas fa-quote-left"></i></div>
-                    <p class="text-gray-600 mb-6 italic">"We have had our house, cars and business insured with Freedman Broker since 1995. It has always been comforting to know we get personal service, good friendly advice, and the best coverage."</p>
-                    <div class="font-bold text-gray-900">David & Kathleen P.</div>
-                    <div class="text-sm text-gray-500">Toronto, Ontario</div>
-                </div>
-                <div class="bg-white p-8 rounded-lg shadow border border-gray-100">
-                    <div class="text-brand text-4xl mb-4"><i class="fas fa-quote-left"></i></div>
-                    <p class="text-gray-600 mb-6 italic">"They arranged insurance for my first car, first apartment, and my home-based business. They took the time to look at my individual needs and explain different coverages."</p>
-                    <div class="font-bold text-gray-900">Brandon R.</div>
-                    <div class="text-sm text-gray-500">Markham, ON</div>
-                </div>
-                <div class="bg-white p-8 rounded-lg shadow border border-gray-100 hidden lg:block">
-                    <div class="text-brand text-4xl mb-4"><i class="fas fa-quote-left"></i></div>
-                    <p class="text-gray-600 mb-6 italic">"I have always found them to be forthright and honest in their quotations, and fair and reasonable in their pricing. Claim service has always been efficient and caring."</p>
-                    <div class="font-bold text-gray-900">Brian B.</div>
-                    <div class="text-sm text-gray-500">Guelph, Ontario</div>
-                </div>
+            <p class="text-center text-xs font-semibold uppercase tracking-[0.2em] text-gray-400 mb-10">Underwritten by Premier Partners</p>
+            <div class="flex flex-wrap justify-center items-center gap-12 lg:gap-24 opacity-40 grayscale hover:grayscale-0 transition-all duration-700">
+                <span class="text-2xl font-bold heading-serif">INTACT</span>
+                <span class="text-2xl font-bold heading-serif">AVIVA</span>
+                <span class="text-2xl font-bold heading-serif">CHUBB</span>
+                <span class="text-2xl font-bold heading-serif">WAWANESA</span>
             </div>
         </div>
     </section>
+        
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white mt-auto pt-16 pb-8">
+    <footer class="bg-brand-navy text-white mt-auto pt-20 pb-10 border-t-4 border-gold-accent">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-                <div class="col-span-1 md:col-span-2">
-                    <a href="index.html" class="text-2xl font-bold text-white tracking-tight flex items-center mb-6">
-                        <i class="fas fa-shield-alt text-brand mr-2"></i> Freedman Broker
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+                <!-- Brand Info -->
+                <div class="md:col-span-4">
+                    <a href="index.html" class="flex items-center mb-6">
+                        <div class="w-8 h-8 bg-brand-gold flex items-center justify-center rounded-sm mr-3">
+                            <i class="fas fa-shield-alt text-brand-navy text-sm"></i>
+                        </div>
+                        <div>
+                            <div class="text-xl font-bold text-white tracking-tight heading-serif leading-none">Freedman Broker</div>
+                        </div>
                     </a>
-                    <p class="text-gray-400 mb-6 max-w-sm">We are an independent insurance brokerage dedicated to providing exceptional service and expert advice to protect what matters most.</p>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6 max-w-sm">
+                        An elite independent insurance brokerage dedicated to providing bespoke coverage solutions with uncompromising integrity and service.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-brand-gold hover:text-white transition-colors"><i class="fab fa-linkedin-in text-sm"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-brand-gold hover:text-white transition-colors"><i class="fab fa-twitter text-sm"></i></a>
+                    </div>
                 </div>
                 
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
-                    <ul class="space-y-2">
-                        <li><a href="personal-insurance.html" class="text-gray-400 hover:text-white transition">Personal Insurance</a></li>
-                        <li><a href="commercial-insurance.html" class="text-gray-400 hover:text-white transition">Commercial Insurance</a></li>
-                        <li><a href="about-us.html" class="text-gray-400 hover:text-white transition">About Us</a></li>
-                        <li><a href="contact.html" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                <!-- Quick Links -->
+                <div class="md:col-span-2 md:col-start-6">
+                    <h4 class="text-white font-semibold mb-6 uppercase tracking-wider text-xs">Solutions</h4>
+                    <ul class="space-y-3">
+                        <li><a href="personal-insurance.html" class="text-gray-400 hover:text-brand-gold text-sm transition-colors">Personal Lines</a></li>
+                        <li><a href="commercial-insurance.html" class="text-gray-400 hover:text-brand-gold text-sm transition-colors">Commercial Lines</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-brand-gold text-sm transition-colors">Request Quote</a></li>
                     </ul>
                 </div>
 
-                <div>
-                    <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
+                <!-- Firm -->
+                <div class="md:col-span-2">
+                    <h4 class="text-white font-semibold mb-6 uppercase tracking-wider text-xs">The Firm</h4>
                     <ul class="space-y-3">
-                        <li class="flex items-start text-gray-400">
-                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-brand"></i>
-                            <span>123 Insurance Ave, Suite 400<br>Toronto, ON M1M 1M1</span>
+                        <li><a href="about-us.html" class="text-gray-400 hover:text-brand-gold text-sm transition-colors">Our Story</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-brand-gold text-sm transition-colors">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-brand-gold text-sm transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="md:col-span-3">
+                    <h4 class="text-white font-semibold mb-6 uppercase tracking-wider text-xs">Contact</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start text-gray-400 text-sm">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-brand-gold w-4 text-center"></i>
+                            <span>123 Financial District<br>Suite 4000<br>Toronto, ON M1M 1M1</span>
                         </li>
-                        <li class="flex items-center text-gray-400">
-                            <i class="fas fa-phone-alt mr-3 text-brand"></i>
-                            <a href="tel:18005550199" class="hover:text-white transition">1-800-555-0199</a>
+                        <li class="flex items-center text-gray-400 text-sm">
+                            <i class="fas fa-phone-alt mr-3 text-brand-gold w-4 text-center"></i>
+                            <a href="tel:18005550199" class="hover:text-white transition-colors">1-800-555-0199</a>
                         </li>
-                        <li class="flex items-center text-gray-400">
-                            <i class="fas fa-envelope mr-3 text-brand"></i>
-                            <a href="mailto:info@freedmanbrokerinsurance.com" class="hover:text-white transition">info@freedman.com</a>
+                        <li class="flex items-center text-gray-400 text-sm">
+                            <i class="fas fa-envelope mr-3 text-brand-gold w-4 text-center"></i>
+                            <a href="mailto:info@freedmanbroker.com" class="hover:text-white transition-colors">info@freedmanbroker.com</a>
                         </li>
                     </ul>
                 </div>
             </div>
             
-            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-xs tracking-wide">
                 <p>&copy; 2024 Freedman Broker Insurance. All rights reserved.</p>
-                <div class="flex space-x-4 mt-4 md:mt-0">
-                    <a href="#" class="hover:text-white transition">Privacy Policy</a>
-                    <span>|</span>
-                    <a href="#" class="hover:text-white transition">Disclosure</a>
-                </div>
+                <p class="mt-2 md:mt-0">Licensed across Ontario, Canada.</p>
             </div>
         </div>
     </footer>

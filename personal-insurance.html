@@ -1,113 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Personal Insurance | Freedman Broker</title>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Insurance | Freedman Broker Insurance</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#0f172a',    // Very dark slate/navy
+                            blue: '#1e3a8a',    // Deep classic blue
+                            gold: '#bf953f',    // Elegant gold
+                            light: '#fcfbf9',   // Off-white/cream
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
-        .text-brand { color: #1e3a8a; }
-        .bg-brand { background-color: #1e3a8a; }
+        body { background-color: #fcfbf9; }
+        .heading-serif { font-family: 'Playfair Display', serif; }
+        .gold-accent { color: #bf953f; }
+        .bg-gold-accent { background-color: #bf953f; }
+        .border-gold-accent { border-color: #bf953f; }
+        .nav-link { position: relative; transition: color 0.3s ease; }
+        .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; left: 0; background-color: #bf953f; transition: width 0.3s ease; }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+        .nav-link:hover { color: #bf953f; }
     </style>
-</head>
-<body class="antialiased flex flex-col min-h-screen bg-gray-50">
 
-    <!-- Header (Same as index.html) -->
+</head>
+<body class="antialiased flex flex-col min-h-screen">
+
+    <!-- Top Bar -->
+    <div class="bg-brand-navy text-gray-300 text-xs sm:text-sm py-2 px-4 sm:px-6 lg:px-8 flex justify-between items-center border-b border-gray-800">
+        <div class="flex space-x-6">
+            <span class="flex items-center"><i class="fas fa-phone-alt mr-2 gold-accent"></i> 1-800-555-0199</span>
+            <span class="hidden sm:flex items-center"><i class="fas fa-envelope mr-2 gold-accent"></i> info@freedmanbroker.com</span>
+        </div>
+        <div class="flex space-x-5">
+            <a href="#" class="hover:text-brand-gold transition-colors duration-300"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="hover:text-brand-gold transition-colors duration-300"><i class="fab fa-twitter"></i></a>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
     <header class="bg-white shadow-sm sticky top-0 z-50" x-data="{ mobileMenuOpen: false }">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
+            <div class="flex justify-between items-center h-24">
+                <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center">
-                    <a href="index.html" class="text-2xl font-bold text-brand tracking-tight flex items-center">
-                        <i class="fas fa-shield-alt text-3xl mr-2"></i> Freedman Broker
+                    <a href="index.html" class="flex items-center group">
+                        <div class="w-10 h-10 bg-brand-navy flex items-center justify-center rounded-sm mr-3 group-hover:bg-brand-gold transition-colors duration-300">
+                            <i class="fas fa-shield-alt text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-brand-navy tracking-tight heading-serif leading-none">Freedman Broker</div>
+                            <div class="text-[0.65rem] uppercase tracking-[0.2em] text-gray-500 mt-1">Premium Insurance Services</div>
+                        </div>
                     </a>
                 </div>
-                <nav class="hidden md:flex space-x-8 h-full">
-                    <a href="personal-insurance.html" class="text-brand border-b-2 border-brand font-semibold flex items-center h-full">Personal Insurance</a>
-                    <a href="commercial-insurance.html" class="text-gray-700 hover:text-brand font-semibold flex items-center h-full">Commercial Insurance</a>
-                    <a href="about-us.html" class="text-gray-700 hover:text-brand font-semibold flex items-center h-full">About Us</a>
-                    <a href="contact.html" class="text-gray-700 hover:text-brand font-semibold flex items-center h-full">Contact</a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-8 h-full items-center">
+                    <a href="index.html" class="text-gray-800 font-medium text-sm uppercase tracking-wide nav-link ">Home</a>
+                    
+                    <!-- Personal Dropdown -->
+                    <div class="relative flex items-center h-full group" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+                        <a href="personal-insurance.html" class="text-gray-800 font-medium text-sm uppercase tracking-wide nav-link flex items-center active">
+                            Personal <i class="fas fa-chevron-down text-[0.6rem] ml-1.5 mt-0.5 text-gray-400 group-hover:text-brand-gold transition-colors"></i>
+                        </a>
+                        <div x-show="open" x-transition.opacity.duration.200ms class="absolute top-[80%] left-0 w-64 bg-white shadow-xl border border-gray-100 rounded-sm overflow-hidden py-2 z-50" style="display: none;">
+                            <a href="personal-insurance.html#auto" class="block px-6 py-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-brand-navy hover:pl-8 transition-all duration-300">Automobile Insurance</a>
+                            <a href="personal-insurance.html#home" class="block px-6 py-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-brand-navy hover:pl-8 transition-all duration-300">Home & Estate</a>
+                            <a href="personal-insurance.html#life" class="block px-6 py-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-brand-navy hover:pl-8 transition-all duration-300">Life & Health</a>
+                            <a href="personal-insurance.html#travel" class="block px-6 py-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-brand-navy hover:pl-8 transition-all duration-300">Travel Coverage</a>
+                        </div>
+                    </div>
+
+                    <!-- Commercial Dropdown -->
+                    <div class="relative flex items-center h-full group" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+                        <a href="commercial-insurance.html" class="text-gray-800 font-medium text-sm uppercase tracking-wide nav-link flex items-center ">
+                            Commercial <i class="fas fa-chevron-down text-[0.6rem] ml-1.5 mt-0.5 text-gray-400 group-hover:text-brand-gold transition-colors"></i>
+                        </a>
+                        <div x-show="open" x-transition.opacity.duration.200ms class="absolute top-[80%] left-0 w-64 bg-white shadow-xl border border-gray-100 rounded-sm overflow-hidden py-2 z-50" style="display: none;">
+                            <a href="commercial-insurance.html#liability" class="block px-6 py-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-brand-navy hover:pl-8 transition-all duration-300">General Liability</a>
+                            <a href="commercial-insurance.html#property" class="block px-6 py-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-brand-navy hover:pl-8 transition-all duration-300">Commercial Property</a>
+                            <a href="commercial-insurance.html#contractors" class="block px-6 py-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-brand-navy hover:pl-8 transition-all duration-300">Contractors & Trades</a>
+                            <a href="commercial-insurance.html#fleet" class="block px-6 py-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-brand-navy hover:pl-8 transition-all duration-300">Fleet & Auto</a>
+                        </div>
+                    </div>
+
+                    <a href="about-us.html" class="text-gray-800 font-medium text-sm uppercase tracking-wide nav-link ">Our Firm</a>
+                    <a href="contact.html" class="text-gray-800 font-medium text-sm uppercase tracking-wide nav-link ">Contact</a>
                 </nav>
+
+                <!-- CTA Button -->
                 <div class="hidden md:flex items-center">
-                    <a href="contact.html" class="bg-brand hover:bg-blue-800 text-white px-6 py-2 rounded font-medium transition shadow">Request a Quote</a>
+                    <a href="contact.html" class="bg-brand-navy hover:bg-brand-gold text-white px-7 py-2.5 rounded-sm font-medium text-sm tracking-wide transition-colors duration-300 shadow-md">
+                        Request Quote
+                    </a>
                 </div>
+
+                <!-- Mobile menu button -->
                 <div class="flex items-center md:hidden">
-                    <button @click="mobileMenuOpen = !mobileMenuOpen" class="text-gray-500 hover:text-gray-900 focus:outline-none"><i class="fas fa-bars text-2xl"></i></button>
+                    <button @click="mobileMenuOpen = !mobileMenuOpen" type="button" class="text-brand-navy hover:text-brand-gold focus:outline-none transition-colors">
+                        <i class="fas fa-bars text-2xl" x-show="!mobileMenuOpen"></i>
+                        <i class="fas fa-times text-2xl" x-show="mobileMenuOpen" x-cloak></i>
+                    </button>
                 </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div x-show="mobileMenuOpen" class="md:hidden bg-white border-t border-gray-100 shadow-inner absolute w-full z-50" x-transition style="display: none;">
+            <div class="px-4 pt-4 pb-6 space-y-2">
+                <a href="index.html" class="block px-3 py-3 text-sm uppercase tracking-wide font-medium text-gray-900 hover:bg-gray-50 border-l-2 border-transparent hover:border-brand-gold">Home</a>
+                <a href="personal-insurance.html" class="block px-3 py-3 text-sm uppercase tracking-wide font-medium text-gray-900 hover:bg-gray-50 border-l-2 border-transparent hover:border-brand-gold">Personal Insurance</a>
+                <a href="commercial-insurance.html" class="block px-3 py-3 text-sm uppercase tracking-wide font-medium text-gray-900 hover:bg-gray-50 border-l-2 border-transparent hover:border-brand-gold">Commercial Insurance</a>
+                <a href="about-us.html" class="block px-3 py-3 text-sm uppercase tracking-wide font-medium text-gray-900 hover:bg-gray-50 border-l-2 border-transparent hover:border-brand-gold">Our Firm</a>
+                <a href="contact.html" class="block px-3 py-3 text-sm uppercase tracking-wide font-medium text-gray-900 hover:bg-gray-50 border-l-2 border-transparent hover:border-brand-gold">Contact</a>
             </div>
         </div>
     </header>
 
+
     <!-- Page Header -->
-    <div class="bg-brand py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl font-bold text-white mb-4">Personal Insurance</h1>
-            <p class="text-xl text-blue-100 max-w-2xl mx-auto">Protecting you, your family, and everything you've worked hard for.</p>
+    <div class="bg-brand-navy py-24 relative overflow-hidden">
+        <div class="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 border border-brand-gold/20 rounded-full opacity-50"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <span class="text-brand-gold font-medium tracking-[0.2em] uppercase text-xs block mb-4">Individual & Family</span>
+            <h1 class="text-5xl md:text-6xl font-bold text-white heading-serif mb-6">Personal Coverage</h1>
+            <p class="text-xl text-gray-400 max-w-2xl font-light">Safeguarding your lifestyle, assets, and legacy with precision.</p>
         </div>
     </div>
 
     <!-- Content -->
-    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-            
-            <div id="auto" class="bg-white p-8 rounded-lg shadow-md border border-gray-100">
-                <div class="text-brand text-4xl mb-4"><i class="fas fa-car"></i></div>
-                <h2 class="text-2xl font-bold text-gray-900 mb-4">Auto Insurance</h2>
-                <p class="text-gray-600 mb-6">Whether you drive a sedan, SUV, or a classic car, we ensure you have the right coverage on the road. We compare quotes from multiple providers to find you the best rate.</p>
-                <ul class="space-y-2 mb-6">
-                    <li class="flex items-center text-sm text-gray-700"><i class="fas fa-check text-green-500 mr-2"></i> Collision & Comprehensive</li>
-                    <li class="flex items-center text-sm text-gray-700"><i class="fas fa-check text-green-500 mr-2"></i> Uninsured Motorist</li>
-                    <li class="flex items-center text-sm text-gray-700"><i class="fas fa-check text-green-500 mr-2"></i> Classic Car Insurance</li>
-                </ul>
-                <a href="contact.html" class="text-brand font-semibold hover:underline">Get an Auto Quote &rarr;</a>
+    <main class="flex-grow max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24 space-y-24">
+        
+        <!-- Auto -->
+        <div id="auto" class="flex flex-col md:flex-row gap-12 items-center">
+            <div class="md:w-1/2">
+                <div class="relative">
+                    <div class="absolute -inset-4 border border-brand-gold/30 transform translate-x-2 translate-y-2 rounded-sm"></div>
+                    <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Luxury Car" class="relative z-10 rounded-sm shadow-xl w-full h-80 object-cover">
+                </div>
             </div>
-
-            <div id="home" class="bg-white p-8 rounded-lg shadow-md border border-gray-100">
-                <div class="text-brand text-4xl mb-4"><i class="fas fa-home"></i></div>
-                <h2 class="text-2xl font-bold text-gray-900 mb-4">Home Insurance</h2>
-                <p class="text-gray-600 mb-6">Your home is your sanctuary. We provide coverage for homeowners, condo owners, and renters, protecting against fire, theft, liability, and more.</p>
-                <ul class="space-y-2 mb-6">
-                    <li class="flex items-center text-sm text-gray-700"><i class="fas fa-check text-green-500 mr-2"></i> Homeowners Insurance</li>
-                    <li class="flex items-center text-sm text-gray-700"><i class="fas fa-check text-green-500 mr-2"></i> Condo & Tenant Insurance</li>
-                    <li class="flex items-center text-sm text-gray-700"><i class="fas fa-check text-green-500 mr-2"></i> Cottage & Secondary Homes</li>
+            <div class="md:w-1/2 md:pl-8">
+                <h2 class="text-3xl font-bold text-brand-navy heading-serif mb-4">Automobile & Collection</h2>
+                <p class="text-gray-600 mb-6 leading-relaxed">From daily drivers to exotic collections, we secure policies that offer total replacement value, genuine parts guarantees, and superior liability protection.</p>
+                <ul class="space-y-3 mb-8 text-gray-700">
+                    <li class="flex items-center"><i class="fas fa-check text-brand-gold mr-3 text-sm"></i> Comprehensive Collision</li>
+                    <li class="flex items-center"><i class="fas fa-check text-brand-gold mr-3 text-sm"></i> Classic & Exotic Valuations</li>
+                    <li class="flex items-center"><i class="fas fa-check text-brand-gold mr-3 text-sm"></i> Worldwide Liability Extensions</li>
                 </ul>
-                <a href="contact.html" class="text-brand font-semibold hover:underline">Get a Home Quote &rarr;</a>
+                <a href="contact.html" class="inline-block border-b-2 border-brand-navy text-brand-navy font-semibold uppercase tracking-wider text-sm pb-1 hover:text-brand-gold hover:border-brand-gold transition-colors">Request a Consultation</a>
             </div>
-
-            <div id="life" class="bg-white p-8 rounded-lg shadow-md border border-gray-100">
-                <div class="text-brand text-4xl mb-4"><i class="fas fa-heartbeat"></i></div>
-                <h2 class="text-2xl font-bold text-gray-900 mb-4">Life & Health Insurance</h2>
-                <p class="text-gray-600 mb-6">Plan for the unexpected. We offer a variety of life insurance products to ensure your family's financial security no matter what happens.</p>
-                <ul class="space-y-2 mb-6">
-                    <li class="flex items-center text-sm text-gray-700"><i class="fas fa-check text-green-500 mr-2"></i> Term & Whole Life</li>
-                    <li class="flex items-center text-sm text-gray-700"><i class="fas fa-check text-green-500 mr-2"></i> Critical Illness</li>
-                    <li class="flex items-center text-sm text-gray-700"><i class="fas fa-check text-green-500 mr-2"></i> Disability Insurance</li>
-                </ul>
-                <a href="contact.html" class="text-brand font-semibold hover:underline">Discuss Life Insurance &rarr;</a>
-            </div>
-
-            <div id="travel" class="bg-white p-8 rounded-lg shadow-md border border-gray-100">
-                <div class="text-brand text-4xl mb-4"><i class="fas fa-plane-departure"></i></div>
-                <h2 class="text-2xl font-bold text-gray-900 mb-4">Travel Insurance</h2>
-                <p class="text-gray-600 mb-6">Travel with peace of mind. Medical emergencies abroad can be incredibly expensive. Ensure you are covered before you leave the country.</p>
-                <ul class="space-y-2 mb-6">
-                    <li class="flex items-center text-sm text-gray-700"><i class="fas fa-check text-green-500 mr-2"></i> Emergency Medical</li>
-                    <li class="flex items-center text-sm text-gray-700"><i class="fas fa-check text-green-500 mr-2"></i> Trip Cancellation</li>
-                    <li class="flex items-center text-sm text-gray-700"><i class="fas fa-check text-green-500 mr-2"></i> Snowbird Packages</li>
-                </ul>
-                <a href="contact.html" class="text-brand font-semibold hover:underline">Get Travel Insurance &rarr;</a>
-            </div>
-
         </div>
+
+        <!-- Home -->
+        <div id="home" class="flex flex-col md:flex-row-reverse gap-12 items-center">
+            <div class="md:w-1/2">
+                <div class="relative">
+                    <div class="absolute -inset-4 border border-brand-gold/30 transform -translate-x-2 translate-y-2 rounded-sm"></div>
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Estate" class="relative z-10 rounded-sm shadow-xl w-full h-80 object-cover">
+                </div>
+            </div>
+            <div class="md:w-1/2 md:pr-8">
+                <h2 class="text-3xl font-bold text-brand-navy heading-serif mb-4">Home & Estate</h2>
+                <p class="text-gray-600 mb-6 leading-relaxed">Protecting your most valuable asset requires more than a standard policy. We specialize in high-value properties, secondary homes, and fine art collections.</p>
+                <ul class="space-y-3 mb-8 text-gray-700">
+                    <li class="flex items-center"><i class="fas fa-check text-brand-gold mr-3 text-sm"></i> Guaranteed Replacement Cost</li>
+                    <li class="flex items-center"><i class="fas fa-check text-brand-gold mr-3 text-sm"></i> Fine Art & Jewelry Floaters</li>
+                    <li class="flex items-center"><i class="fas fa-check text-brand-gold mr-3 text-sm"></i> Domestic Staff Liability</li>
+                </ul>
+                <a href="contact.html" class="inline-block border-b-2 border-brand-navy text-brand-navy font-semibold uppercase tracking-wider text-sm pb-1 hover:text-brand-gold hover:border-brand-gold transition-colors">Request a Consultation</a>
+            </div>
+        </div>
+
     </main>
+        
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-8 mt-auto">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-400 text-sm">
-            <p>&copy; 2024 Freedman Broker Insurance. All rights reserved.</p>
+    <footer class="bg-brand-navy text-white mt-auto pt-20 pb-10 border-t-4 border-gold-accent">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+                <!-- Brand Info -->
+                <div class="md:col-span-4">
+                    <a href="index.html" class="flex items-center mb-6">
+                        <div class="w-8 h-8 bg-brand-gold flex items-center justify-center rounded-sm mr-3">
+                            <i class="fas fa-shield-alt text-brand-navy text-sm"></i>
+                        </div>
+                        <div>
+                            <div class="text-xl font-bold text-white tracking-tight heading-serif leading-none">Freedman Broker</div>
+                        </div>
+                    </a>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6 max-w-sm">
+                        An elite independent insurance brokerage dedicated to providing bespoke coverage solutions with uncompromising integrity and service.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-brand-gold hover:text-white transition-colors"><i class="fab fa-linkedin-in text-sm"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-brand-gold hover:text-white transition-colors"><i class="fab fa-twitter text-sm"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="md:col-span-2 md:col-start-6">
+                    <h4 class="text-white font-semibold mb-6 uppercase tracking-wider text-xs">Solutions</h4>
+                    <ul class="space-y-3">
+                        <li><a href="personal-insurance.html" class="text-gray-400 hover:text-brand-gold text-sm transition-colors">Personal Lines</a></li>
+                        <li><a href="commercial-insurance.html" class="text-gray-400 hover:text-brand-gold text-sm transition-colors">Commercial Lines</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-brand-gold text-sm transition-colors">Request Quote</a></li>
+                    </ul>
+                </div>
+
+                <!-- Firm -->
+                <div class="md:col-span-2">
+                    <h4 class="text-white font-semibold mb-6 uppercase tracking-wider text-xs">The Firm</h4>
+                    <ul class="space-y-3">
+                        <li><a href="about-us.html" class="text-gray-400 hover:text-brand-gold text-sm transition-colors">Our Story</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-brand-gold text-sm transition-colors">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-brand-gold text-sm transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="md:col-span-3">
+                    <h4 class="text-white font-semibold mb-6 uppercase tracking-wider text-xs">Contact</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start text-gray-400 text-sm">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-brand-gold w-4 text-center"></i>
+                            <span>123 Financial District<br>Suite 4000<br>Toronto, ON M1M 1M1</span>
+                        </li>
+                        <li class="flex items-center text-gray-400 text-sm">
+                            <i class="fas fa-phone-alt mr-3 text-brand-gold w-4 text-center"></i>
+                            <a href="tel:18005550199" class="hover:text-white transition-colors">1-800-555-0199</a>
+                        </li>
+                        <li class="flex items-center text-gray-400 text-sm">
+                            <i class="fas fa-envelope mr-3 text-brand-gold w-4 text-center"></i>
+                            <a href="mailto:info@freedmanbroker.com" class="hover:text-white transition-colors">info@freedmanbroker.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-xs tracking-wide">
+                <p>&copy; 2024 Freedman Broker Insurance. All rights reserved.</p>
+                <p class="mt-2 md:mt-0">Licensed across Ontario, Canada.</p>
+            </div>
         </div>
     </footer>
+
 </body>
 </html>
