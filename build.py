@@ -79,6 +79,31 @@ PAGES = {
         </div>
     </section>
 
+    <!-- Stats Banner (The Freedman Difference) -->
+    <section class="bg-brand-navy border-t border-gray-800 py-12 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center divide-x divide-gray-800">
+                <div>
+                    <p class="text-4xl md:text-5xl font-bold text-brand-gold heading-serif mb-2">35<span class="text-2xl">+</span></p>
+                    <p class="text-xs uppercase tracking-widest text-gray-400">Years Heritage</p>
+                </div>
+                <div>
+                    <p class="text-4xl md:text-5xl font-bold text-brand-gold heading-serif mb-2">$4<span class="text-2xl">B</span></p>
+                    <p class="text-xs uppercase tracking-widest text-gray-400">Assets Protected</p>
+                </div>
+                <div>
+                    <p class="text-4xl md:text-5xl font-bold text-brand-gold heading-serif mb-2">98<span class="text-2xl">%</span></p>
+                    <p class="text-xs uppercase tracking-widest text-gray-400">Client Retention</p>
+                </div>
+                <div>
+                    <p class="text-4xl md:text-5xl font-bold text-brand-gold heading-serif mb-2">24<span class="text-2xl">/7</span></p>
+                    <p class="text-xs uppercase tracking-widest text-gray-400">Concierge Claims</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Expertise Section -->
     <section class="py-24 bg-brand-light">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -122,8 +147,72 @@ PAGES = {
         </div>
     </section>
 
+    <!-- The Concierge Approach -->
+    <section class="py-24 bg-white border-y border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-brand-gold font-medium tracking-[0.2em] uppercase text-xs block mb-4">Our Methodology</span>
+                <h2 class="text-4xl font-bold text-brand-navy heading-serif mb-6">The Concierge Approach</h2>
+                <div class="w-16 h-0.5 bg-brand-gold mx-auto"></div>
+                <p class="mt-6 text-gray-600 max-w-2xl mx-auto">We don't sell generic policies off the shelf. We engineer risk architecture through a meticulous three-step process.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
+                <!-- Connecting Line (Desktop) -->
+                <div class="hidden md:block absolute top-12 left-[16%] right-[16%] h-[1px] bg-gray-200 z-0"></div>
+
+                <div class="relative z-10 flex flex-col items-center text-center">
+                    <div class="w-24 h-24 bg-brand-navy text-brand-gold rounded-full flex items-center justify-center text-3xl mb-6 shadow-xl border-4 border-white">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-navy heading-serif mb-3">1. Discovery & Audit</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">A forensic review of your current exposures, identifying gaps in coverage and inefficiencies in premium spend.</p>
+                </div>
+
+                <div class="relative z-10 flex flex-col items-center text-center">
+                    <div class="w-24 h-24 bg-brand-navy text-brand-gold rounded-full flex items-center justify-center text-3xl mb-6 shadow-xl border-4 border-white">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-navy heading-serif mb-3">2. Portfolio Design</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Negotiating with premier underwriting syndicates to construct a bespoke architecture of policies.</p>
+                </div>
+
+                <div class="relative z-10 flex flex-col items-center text-center">
+                    <div class="w-24 h-24 bg-brand-navy text-brand-gold rounded-full flex items-center justify-center text-3xl mb-6 shadow-xl border-4 border-white">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-navy heading-serif mb-3">3. Active Advocacy</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Continuous market monitoring, annual reviews, and aggressive in-house claims advocacy when you need it most.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Capability (Image + Text) -->
+    <section class="bg-brand-navy text-white">
+        <div class="flex flex-col lg:flex-row">
+            <div class="lg:w-1/2 h-96 lg:h-auto relative min-h-[400px]">
+                <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Executive Meeting" class="absolute inset-0 w-full h-full object-cover grayscale mix-blend-multiply opacity-50">
+            </div>
+            <div class="lg:w-1/2 p-12 md:p-24 flex flex-col justify-center relative">
+                <div class="absolute top-0 left-0 w-1 h-full bg-brand-gold"></div>
+                <span class="text-brand-gold font-medium tracking-[0.2em] uppercase text-xs block mb-4">Featured Capability</span>
+                <h2 class="text-4xl font-bold heading-serif mb-6">Executive Protection</h2>
+                <p class="text-gray-300 leading-relaxed mb-8">
+                    Corporate leaders face unprecedented personal exposure in today's litigious environment. Our firm specializes in structuring airtight Directors & Officers (D&O) liability, Employment Practices Liability (EPLI), and comprehensive Cyber extortion defenses.
+                </p>
+                <p class="text-gray-300 leading-relaxed mb-10">
+                    We ensure your personal assets remain entirely decoupled from your corporate risks.
+                </p>
+                <a href="contact.html" class="inline-flex items-center text-sm font-semibold uppercase tracking-wider text-brand-gold hover:text-white transition-colors group">
+                    Schedule an Executive Audit <i class="fas fa-arrow-right ml-3 group-hover:translate-x-2 transition-transform"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Client Testimonials -->
-    <section class="py-24 bg-white border-t border-gray-100">
+    <section class="py-24 bg-brand-light border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <span class="text-brand-gold font-medium tracking-[0.2em] uppercase text-xs block mb-4">Client Relations</span>
@@ -131,7 +220,7 @@ PAGES = {
                 <div class="w-16 h-0.5 bg-brand-gold mx-auto"></div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-                <div class="p-8 border border-gray-100 shadow-sm relative">
+                <div class="p-8 bg-white border border-gray-100 shadow-sm relative">
                     <i class="fas fa-quote-left text-brand-gold/20 text-5xl absolute top-4 left-4"></i>
                     <p class="text-gray-600 relative z-10 mb-6 italic leading-relaxed">"Their handling of our corporate liability portfolio is nothing short of exceptional. The proactive risk management insights provided by Freedman Broker have been invaluable to our expansion."</p>
                     <div class="flex items-center">
@@ -142,7 +231,7 @@ PAGES = {
                         </div>
                     </div>
                 </div>
-                <div class="p-8 border border-gray-100 shadow-sm relative">
+                <div class="p-8 bg-white border border-gray-100 shadow-sm relative">
                     <i class="fas fa-quote-left text-brand-gold/20 text-5xl absolute top-4 left-4"></i>
                     <p class="text-gray-600 relative z-10 mb-6 italic leading-relaxed">"Securing our estate and private collection was handled with absolute discretion and unmatched expertise. They understand the nuances of high-value asset protection perfectly."</p>
                     <div class="flex items-center">
@@ -153,7 +242,7 @@ PAGES = {
                         </div>
                     </div>
                 </div>
-                <div class="p-8 border border-gray-100 shadow-sm relative">
+                <div class="p-8 bg-white border border-gray-100 shadow-sm relative">
                     <i class="fas fa-quote-left text-brand-gold/20 text-5xl absolute top-4 left-4"></i>
                     <p class="text-gray-600 relative z-10 mb-6 italic leading-relaxed">"When a fire threatened our manufacturing facility, Freedman's claims advocacy team stepped in immediately. They managed the entire process, minimizing our downtime significantly."</p>
                     <div class="flex items-center">
@@ -169,462 +258,85 @@ PAGES = {
     </section>
 
     <!-- Market Insights (News) -->
-    <section class="py-24 bg-brand-light">
+    <section class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-end mb-16 border-b border-gray-200 pb-6">
                 <div>
+                    <span class="text-brand-gold font-medium tracking-[0.2em] uppercase text-xs block mb-4">Latest Publications</span>
                     <h2 class="text-4xl font-bold text-brand-navy heading-serif">Market Insights</h2>
                 </div>
-                <a href="#" class="text-sm font-semibold uppercase tracking-wider text-brand-gold hover:text-brand-navy transition-colors">View All Articles</a>
+                <a href="#" class="text-sm font-semibold uppercase tracking-wider text-brand-navy border-b border-brand-navy pb-1 hover:text-brand-gold hover:border-brand-gold transition-colors hidden sm:block">View All Articles</a>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div class="flex gap-6 group cursor-pointer">
-                    <div class="w-1/3 h-32 overflow-hidden rounded-sm shadow-md">
+                <div class="flex gap-6 group cursor-pointer border border-gray-100 p-4 rounded-sm shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-1/3 h-32 overflow-hidden rounded-sm">
                         <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Finance" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
-                    <div class="w-2/3">
-                        <p class="text-brand-gold text-xs font-semibold tracking-wider uppercase mb-2">Corporate Liability</p>
-                        <h3 class="text-xl font-bold text-brand-navy heading-serif mb-2 group-hover:text-brand-gold transition-colors">Navigating D&O Insurance in 2024</h3>
-                        <p class="text-gray-600 text-sm line-clamp-2">An executive briefing on the shifting landscape of Directors and Officers liability...</p>
+                    <div class="w-2/3 flex flex-col justify-center">
+                        <p class="text-brand-gold text-[0.65rem] font-semibold tracking-wider uppercase mb-2">Corporate Liability</p>
+                        <h3 class="text-lg font-bold text-brand-navy heading-serif mb-2 group-hover:text-brand-gold transition-colors">Navigating D&O Insurance in 2024</h3>
+                        <p class="text-gray-500 text-xs line-clamp-2 leading-relaxed">An executive briefing on the shifting landscape of Directors and Officers liability amid increasing regulatory scrutiny...</p>
                     </div>
                 </div>
-                <div class="flex gap-6 group cursor-pointer">
-                    <div class="w-1/3 h-32 overflow-hidden rounded-sm shadow-md">
+                <div class="flex gap-6 group cursor-pointer border border-gray-100 p-4 rounded-sm shadow-sm hover:shadow-md transition-shadow">
+                    <div class="w-1/3 h-32 overflow-hidden rounded-sm">
                         <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Estate" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
-                    <div class="w-2/3">
-                        <p class="text-brand-gold text-xs font-semibold tracking-wider uppercase mb-2">Private Wealth</p>
-                        <h3 class="text-xl font-bold text-brand-navy heading-serif mb-2 group-hover:text-brand-gold transition-colors">Protecting Fine Art Collections</h3>
-                        <p class="text-gray-600 text-sm line-clamp-2">Why standard homeowner policies fail to adequately protect significant art portfolios...</p>
+                    <div class="w-2/3 flex flex-col justify-center">
+                        <p class="text-brand-gold text-[0.65rem] font-semibold tracking-wider uppercase mb-2">Private Wealth</p>
+                        <h3 class="text-lg font-bold text-brand-navy heading-serif mb-2 group-hover:text-brand-gold transition-colors">Protecting Fine Art Collections</h3>
+                        <p class="text-gray-500 text-xs line-clamp-2 leading-relaxed">Why standard homeowner policies fail to adequately protect significant art portfolios and rare collections...</p>
                     </div>
                 </div>
+            </div>
+            <div class="mt-8 text-center sm:hidden">
+                <a href="#" class="text-sm font-semibold uppercase tracking-wider text-brand-navy border-b border-brand-navy pb-1 hover:text-brand-gold hover:border-brand-gold transition-colors">View All Articles</a>
             </div>
         </div>
     </section>
 
     <!-- Trust Banner -->
-    <section class="py-16 bg-white border-t border-gray-100">
+    <section class="py-16 bg-gray-50 border-t border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <p class="text-center text-xs font-semibold uppercase tracking-[0.2em] text-gray-400 mb-10">Underwritten by Premier Partners</p>
             <div class="flex flex-wrap justify-center items-center gap-12 lg:gap-24 opacity-40 grayscale hover:grayscale-0 transition-all duration-700">
-                <span class="text-2xl font-bold heading-serif">INTACT</span>
-                <span class="text-2xl font-bold heading-serif">AVIVA</span>
-                <span class="text-2xl font-bold heading-serif">CHUBB</span>
-                <span class="text-2xl font-bold heading-serif">WAWANESA</span>
+                <span class="text-2xl font-bold heading-serif text-brand-navy">INTACT</span>
+                <span class="text-2xl font-bold heading-serif text-brand-navy">AVIVA</span>
+                <span class="text-2xl font-bold heading-serif text-brand-navy">CHUBB</span>
+                <span class="text-2xl font-bold heading-serif text-brand-navy">WAWANESA</span>
             </div>
         </div>
     </section>
-        """
-    },
-    "personal-insurance.html": {
-        "title": "Personal Insurance | Freedman Broker",
-        "active": "personal",
-        "content": """
-    <!-- Page Header -->
-    <div class="bg-brand-navy py-24 relative overflow-hidden">
-        <div class="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 border border-brand-gold/20 rounded-full opacity-50"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <span class="text-brand-gold font-medium tracking-[0.2em] uppercase text-xs block mb-4">Individual & Family</span>
-            <h1 class="text-5xl md:text-6xl font-bold text-white heading-serif mb-6">Personal Coverage</h1>
-            <p class="text-xl text-gray-400 max-w-2xl font-light">Safeguarding your lifestyle, assets, and legacy with precision.</p>
-        </div>
-    </div>
-
-    <!-- The Freedman Advantage -->
-    <section class="py-16 bg-white border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                <div class="p-6">
-                    <i class="fas fa-search-dollar text-brand-gold text-3xl mb-4"></i>
-                    <h3 class="text-xl font-bold text-brand-navy heading-serif mb-2">Market Analysis</h3>
-                    <p class="text-gray-600 text-sm">We continually monitor the market to ensure your premiums reflect the best available value.</p>
-                </div>
-                <div class="p-6">
-                    <i class="fas fa-file-contract text-brand-gold text-3xl mb-4"></i>
-                    <h3 class="text-xl font-bold text-brand-navy heading-serif mb-2">Policy Consolidation</h3>
-                    <p class="text-gray-600 text-sm">Streamline your portfolio by bundling auto, home, and umbrella liability under one strategy.</p>
-                </div>
-                <div class="p-6">
-                    <i class="fas fa-user-shield text-brand-gold text-3xl mb-4"></i>
-                    <h3 class="text-xl font-bold text-brand-navy heading-serif mb-2">Dedicated Advocate</h3>
-                    <p class="text-gray-600 text-sm">A single point of contact for all your inquiries, policy updates, and claims assistance.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Content -->
-    <main class="flex-grow max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-24 space-y-24">
-        
-        <!-- Auto -->
-        <div id="auto" class="flex flex-col md:flex-row gap-12 items-center">
-            <div class="md:w-1/2">
-                <div class="relative">
-                    <div class="absolute -inset-4 border border-brand-gold/30 transform translate-x-2 translate-y-2 rounded-sm"></div>
-                    <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Luxury Car" class="relative z-10 rounded-sm shadow-xl w-full h-80 object-cover">
-                </div>
-            </div>
-            <div class="md:w-1/2 md:pl-8">
-                <h2 class="text-3xl font-bold text-brand-navy heading-serif mb-4">Automobile & Collection</h2>
-                <p class="text-gray-600 mb-6 leading-relaxed">From daily drivers to exotic collections, we secure policies that offer total replacement value, genuine parts guarantees, and superior liability protection.</p>
-                <ul class="space-y-3 mb-8 text-gray-700">
-                    <li class="flex items-center"><i class="fas fa-check text-brand-gold mr-3 text-sm"></i> Comprehensive Collision</li>
-                    <li class="flex items-center"><i class="fas fa-check text-brand-gold mr-3 text-sm"></i> Classic & Exotic Valuations</li>
-                    <li class="flex items-center"><i class="fas fa-check text-brand-gold mr-3 text-sm"></i> Worldwide Liability Extensions</li>
-                </ul>
-                <a href="contact.html" class="inline-block border-b-2 border-brand-navy text-brand-navy font-semibold uppercase tracking-wider text-sm pb-1 hover:text-brand-gold hover:border-brand-gold transition-colors">Request a Consultation</a>
-            </div>
-        </div>
-
-        <!-- Home -->
-        <div id="home" class="flex flex-col md:flex-row-reverse gap-12 items-center">
-            <div class="md:w-1/2">
-                <div class="relative">
-                    <div class="absolute -inset-4 border border-brand-gold/30 transform -translate-x-2 translate-y-2 rounded-sm"></div>
-                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Estate" class="relative z-10 rounded-sm shadow-xl w-full h-80 object-cover">
-                </div>
-            </div>
-            <div class="md:w-1/2 md:pr-8">
-                <h2 class="text-3xl font-bold text-brand-navy heading-serif mb-4">Home & Estate</h2>
-                <p class="text-gray-600 mb-6 leading-relaxed">Protecting your most valuable asset requires more than a standard policy. We specialize in high-value properties, secondary homes, and fine art collections.</p>
-                <ul class="space-y-3 mb-8 text-gray-700">
-                    <li class="flex items-center"><i class="fas fa-check text-brand-gold mr-3 text-sm"></i> Guaranteed Replacement Cost</li>
-                    <li class="flex items-center"><i class="fas fa-check text-brand-gold mr-3 text-sm"></i> Fine Art & Jewelry Floaters</li>
-                    <li class="flex items-center"><i class="fas fa-check text-brand-gold mr-3 text-sm"></i> Domestic Staff Liability</li>
-                </ul>
-                <a href="contact.html" class="inline-block border-b-2 border-brand-navy text-brand-navy font-semibold uppercase tracking-wider text-sm pb-1 hover:text-brand-gold hover:border-brand-gold transition-colors">Request a Consultation</a>
-            </div>
-        </div>
-        
-        <!-- Life -->
-        <div id="life" class="flex flex-col md:flex-row gap-12 items-center">
-            <div class="md:w-1/2">
-                <div class="relative">
-                    <div class="absolute -inset-4 border border-brand-gold/30 transform translate-x-2 translate-y-2 rounded-sm"></div>
-                    <img src="https://images.unsplash.com/photo-1536640712-4d4c36ef0e47?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Family" class="relative z-10 rounded-sm shadow-xl w-full h-80 object-cover">
-                </div>
-            </div>
-            <div class="md:w-1/2 md:pl-8">
-                <h2 class="text-3xl font-bold text-brand-navy heading-serif mb-4">Life & Health Legacy</h2>
-                <p class="text-gray-600 mb-6 leading-relaxed">Secure your family's future and preserve your wealth across generations. We offer bespoke life and health products designed for complex estates.</p>
-                <ul class="space-y-3 mb-8 text-gray-700">
-                    <li class="flex items-center"><i class="fas fa-check text-brand-gold mr-3 text-sm"></i> Estate Preservation Plans</li>
-                    <li class="flex items-center"><i class="fas fa-check text-brand-gold mr-3 text-sm"></i> Premium Term & Whole Life</li>
-                    <li class="flex items-center"><i class="fas fa-check text-brand-gold mr-3 text-sm"></i> Critical Illness & Disability</li>
-                </ul>
-                <a href="contact.html" class="inline-block border-b-2 border-brand-navy text-brand-navy font-semibold uppercase tracking-wider text-sm pb-1 hover:text-brand-gold hover:border-brand-gold transition-colors">Request a Consultation</a>
-            </div>
-        </div>
-
-    </main>
-    
-    <!-- FAQ Section -->
-    <section class="py-20 bg-brand-navy">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-white heading-serif mb-4">Frequently Asked Questions</h2>
-                <div class="w-16 h-0.5 bg-brand-gold mx-auto"></div>
-            </div>
-            <div class="space-y-6">
-                <div class="bg-gray-800 p-6 rounded-sm border border-gray-700">
-                    <h3 class="text-xl font-semibold text-white mb-3">How often should I review my personal insurance portfolio?</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">We recommend a comprehensive review annually, or immediately following significant life events such as a marriage, birth of a child, major property acquisition, or significant changes to your asset valuation.</p>
-                </div>
-                <div class="bg-gray-800 p-6 rounded-sm border border-gray-700">
-                    <h3 class="text-xl font-semibold text-white mb-3">Are my fine art and jewelry covered under my standard homeowner's policy?</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Standard policies often have strict sub-limits for high-value items. To guarantee full replacement value without depreciation, these items must be specifically scheduled on a valuable articles floater.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-        """
-    },
-    "commercial-insurance.html": {
-        "title": "Commercial Insurance | Freedman Broker",
-        "active": "commercial",
-        "content": """
-    <!-- Page Header -->
-    <div class="bg-brand-navy py-24 relative overflow-hidden">
-        <div class="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 border border-brand-gold/20 rounded-full opacity-50"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <span class="text-brand-gold font-medium tracking-[0.2em] uppercase text-xs block mb-4">Enterprise & Business</span>
-            <h1 class="text-5xl md:text-6xl font-bold text-white heading-serif mb-6">Commercial Lines</h1>
-            <p class="text-xl text-gray-400 max-w-2xl font-light">Sophisticated risk mitigation strategies for modern enterprises.</p>
-        </div>
-    </div>
-
-    <!-- Industry Expertise -->
-    <section class="py-16 bg-brand-light border-b border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h3 class="text-center text-sm font-semibold uppercase tracking-widest text-brand-navy mb-10">Specialized Industry Practices</h3>
-            <div class="flex flex-wrap justify-center gap-4">
-                <span class="px-6 py-2 border border-brand-gold/50 text-brand-navy rounded-full text-sm font-medium hover:bg-brand-gold hover:text-white transition-colors cursor-pointer">Real Estate & Construction</span>
-                <span class="px-6 py-2 border border-brand-gold/50 text-brand-navy rounded-full text-sm font-medium hover:bg-brand-gold hover:text-white transition-colors cursor-pointer">Manufacturing</span>
-                <span class="px-6 py-2 border border-brand-gold/50 text-brand-navy rounded-full text-sm font-medium hover:bg-brand-gold hover:text-white transition-colors cursor-pointer">Technology & Cyber</span>
-                <span class="px-6 py-2 border border-brand-gold/50 text-brand-navy rounded-full text-sm font-medium hover:bg-brand-gold hover:text-white transition-colors cursor-pointer">Professional Services</span>
-                <span class="px-6 py-2 border border-brand-gold/50 text-brand-navy rounded-full text-sm font-medium hover:bg-brand-gold hover:text-white transition-colors cursor-pointer">Transportation</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Content -->
-    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-        
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-16 mb-24">
-            <div class="lg:col-span-1">
-                <h2 class="text-4xl font-bold text-brand-navy heading-serif mb-6">Enterprise Risk Management</h2>
-                <p class="text-gray-600 leading-relaxed mb-6">We do not simply sell policies; we engineer holistic risk architectures. Our commercial team conducts exhaustive audits of your operational exposures to design defenses that protect your balance sheet and satisfy board-level scrutiny.</p>
-                <div class="p-6 bg-brand-navy text-white rounded-sm mt-8 relative overflow-hidden">
-                    <div class="absolute -right-4 -bottom-4 opacity-10">
-                        <i class="fas fa-chart-pie text-9xl text-brand-gold"></i>
-                    </div>
-                    <h4 class="text-brand-gold font-serif text-lg mb-2 relative z-10">Did You Know?</h4>
-                    <p class="text-sm font-light text-gray-300 relative z-10">Over 60% of mid-market enterprises are underinsured in areas of Cyber Liability and Business Interruption. We close these gaps.</p>
-                </div>
-            </div>
-            
-            <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
-                <div id="liability" class="border-t-2 border-brand-gold pt-6">
-                    <div class="w-10 h-10 bg-brand-light text-brand-navy rounded flex items-center justify-center text-lg mb-4"><i class="fas fa-balance-scale"></i></div>
-                    <h3 class="text-2xl font-bold text-brand-navy heading-serif mb-3">General Liability & D&O</h3>
-                    <p class="text-gray-600 mb-4 text-sm leading-relaxed">Protect your balance sheet from litigation. We craft robust liability shields including Directors & Officers, Errors & Omissions, and comprehensive Cyber Liability protection.</p>
-                </div>
-
-                <div id="property" class="border-t-2 border-brand-gold pt-6">
-                    <div class="w-10 h-10 bg-brand-light text-brand-navy rounded flex items-center justify-center text-lg mb-4"><i class="fas fa-building"></i></div>
-                    <h3 class="text-2xl font-bold text-brand-navy heading-serif mb-3">Commercial Property</h3>
-                    <p class="text-gray-600 mb-4 text-sm leading-relaxed">Comprehensive coverage for real estate portfolios, manufacturing facilities, and corporate headquarters against physical loss, equipment breakdown, and business interruption.</p>
-                </div>
-
-                <div id="contractors" class="border-t-2 border-brand-gold pt-6">
-                    <div class="w-10 h-10 bg-brand-light text-brand-navy rounded flex items-center justify-center text-lg mb-4"><i class="fas fa-hard-hat"></i></div>
-                    <h3 class="text-2xl font-bold text-brand-navy heading-serif mb-3">Contractors & Development</h3>
-                    <p class="text-gray-600 mb-4 text-sm leading-relaxed">Wrap-up liability, course of construction, and rigorous surety bonding solutions tailored for large-scale development projects and elite trade contractors.</p>
-                </div>
-
-                 <div id="fleet" class="border-t-2 border-brand-gold pt-6">
-                    <div class="w-10 h-10 bg-brand-light text-brand-navy rounded flex items-center justify-center text-lg mb-4"><i class="fas fa-truck"></i></div>
-                    <h3 class="text-2xl font-bold text-brand-navy heading-serif mb-3">Commercial Fleet</h3>
-                    <p class="text-gray-600 mb-4 text-sm leading-relaxed">Optimized fleet insurance programs offering extensive liability limits, cargo protection, and streamlined claims management to keep your logistics network moving.</p>
-                </div>
-            </div>
-        </div>
-
-    </main>
-    
-    <!-- CTA Banner -->
-    <section class="bg-gray-100 py-16 border-t border-gray-200">
-        <div class="max-w-4xl mx-auto text-center px-4">
-            <h2 class="text-3xl font-bold text-brand-navy heading-serif mb-6">Ready to secure your enterprise?</h2>
-            <p class="text-gray-600 mb-8 text-lg">Request a confidential, comprehensive audit of your current commercial policies.</p>
-            <a href="contact.html" class="inline-block bg-brand-navy text-white px-8 py-4 rounded-sm font-medium text-sm uppercase tracking-wider hover:bg-brand-gold transition-colors duration-300 shadow-lg">Schedule Commercial Audit</a>
-        </div>
-    </section>
-        """
-    },
-    "about-us.html": {
-        "title": "Our Firm | Freedman Broker",
-        "active": "about",
-        "content": """
-    <!-- Page Header -->
-    <div class="bg-brand-navy py-24 relative overflow-hidden">
-        <div class="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 border border-brand-gold/20 rounded-full opacity-50"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <span class="text-brand-gold font-medium tracking-[0.2em] uppercase text-xs block mb-4">The Firm</span>
-            <h1 class="text-5xl md:text-6xl font-bold text-white heading-serif mb-6">Heritage & Excellence</h1>
-            <p class="text-xl text-gray-400 max-w-2xl mx-auto font-light">Decades of uncompromising advocacy for our clients.</p>
-        </div>
-    </div>
-
-    <main class="flex-grow max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-        <div class="flex flex-col lg:flex-row gap-16 items-center mb-24">
-            <div class="lg:w-1/2">
-                <div class="relative p-6 bg-white shadow-2xl rounded-sm border border-gray-100">
-                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Boardroom" class="rounded-sm w-full h-[500px] object-cover grayscale">
-                    <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-brand-gold rounded-sm -z-10"></div>
-                </div>
-            </div>
-            <div class="lg:w-1/2">
-                <h2 class="text-4xl font-bold text-brand-navy heading-serif mb-8">Redefining the Brokerage Experience</h2>
-                <p class="text-lg text-gray-600 mb-6 font-light leading-relaxed">
-                    Freedman Broker Insurance was established on a singular premise: complex wealth and enterprise risk require more than an algorithm. They require a dedicated advocate.
-                </p>
-                <p class="text-lg text-gray-600 mb-10 font-light leading-relaxed">
-                    We eschew the volume-driven models of modern insurance in favor of a boutique approach. Our advisors operate as an extension of your financial and legal teams, curating bespoke portfolios from the world's most elite underwriting syndicates.
-                </p>
-                
-                <div class="border-l-4 border-brand-gold pl-6 py-4 mb-8 bg-gray-50 rounded-r-md">
-                    <h3 class="text-xl font-bold text-brand-navy heading-serif mb-2">Unbiased Advocacy</h3>
-                    <p class="text-gray-600 text-sm">As an independent firm, our allegiance is solely to our clients. In the event of a claim, our dedicated in-house counsel and adjusters negotiate fiercely on your behalf.</p>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Leadership Section -->
-        <div class="mb-24">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-brand-navy heading-serif mb-4">Leadership</h2>
-                <div class="w-16 h-0.5 bg-brand-gold mx-auto"></div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-                <div class="text-center">
-                    <div class="w-48 h-48 mx-auto rounded-full overflow-hidden mb-6 border-4 border-white shadow-xl">
-                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="CEO" class="w-full h-full object-cover grayscale">
-                    </div>
-                    <h3 class="text-2xl font-bold text-brand-navy heading-serif">Richard Freedman</h3>
-                    <p class="text-brand-gold text-sm font-medium tracking-widest uppercase mb-4">Founder & CEO</p>
-                    <p class="text-gray-600 text-sm">With over 30 years in corporate risk management, Richard guides the strategic vision of the firm.</p>
-                </div>
-                <div class="text-center">
-                    <div class="w-48 h-48 mx-auto rounded-full overflow-hidden mb-6 border-4 border-white shadow-xl">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Partner" class="w-full h-full object-cover grayscale">
-                    </div>
-                    <h3 class="text-2xl font-bold text-brand-navy heading-serif">Sarah Jenkins</h3>
-                    <p class="text-brand-gold text-sm font-medium tracking-widest uppercase mb-4">Managing Partner</p>
-                    <p class="text-gray-600 text-sm">Sarah oversees the Private Wealth division, specializing in ultra-high-net-worth portfolio design.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Core Values Grid -->
-        <div class="bg-brand-navy text-white rounded-sm p-12 md:p-16 shadow-2xl relative overflow-hidden">
-            <div class="absolute -left-20 -top-20 opacity-5">
-                <i class="fas fa-landmark text-[20rem]"></i>
-            </div>
-            <div class="relative z-10">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl font-bold heading-serif mb-4">Our Foundational Pillars</h2>
-                    <div class="w-16 h-0.5 bg-brand-gold mx-auto"></div>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
-                    <div>
-                        <div class="w-16 h-16 rounded-full border border-brand-gold flex items-center justify-center mx-auto mb-6 bg-brand-navy">
-                            <i class="fas fa-gem text-brand-gold text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold heading-serif mb-3">Excellence</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">We demand perfection in policy architecture, leaving no exposure unaddressed and no detail overlooked.</p>
-                    </div>
-                    <div>
-                        <div class="w-16 h-16 rounded-full border border-brand-gold flex items-center justify-center mx-auto mb-6 bg-brand-navy">
-                            <i class="fas fa-handshake text-brand-gold text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold heading-serif mb-3">Integrity</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">Absolute transparency in pricing, coverage limitations, and carrier relationships. We serve only you.</p>
-                    </div>
-                    <div>
-                        <div class="w-16 h-16 rounded-full border border-brand-gold flex items-center justify-center mx-auto mb-6 bg-brand-navy">
-                            <i class="fas fa-shield-alt text-brand-gold text-2xl"></i>
-                        </div>
-                        <h3 class="text-xl font-bold heading-serif mb-3">Tenacity</h3>
-                        <p class="text-gray-400 text-sm leading-relaxed">When claims arise, we act swiftly and aggressively to ensure maximum compensation and minimal disruption.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-        """
-    },
-    "contact.html": {
-        "title": "Contact | Freedman Broker",
-        "active": "contact",
-        "content": """
-    <!-- Page Header -->
-    <div class="bg-brand-navy py-24 relative overflow-hidden">
-        <div class="absolute top-0 right-0 -mt-20 -mr-20 w-96 h-96 border border-brand-gold/20 rounded-full opacity-50"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <span class="text-brand-gold font-medium tracking-[0.2em] uppercase text-xs block mb-4">Connect With Us</span>
-            <h1 class="text-5xl md:text-6xl font-bold text-white heading-serif mb-6">Private Consultation</h1>
-            <p class="text-xl text-gray-400 max-w-2xl mx-auto font-light">Discreet, professional, and entirely tailored to your requirements.</p>
-        </div>
-    </div>
-
-    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-        <div class="grid grid-cols-1 lg:grid-cols-5 gap-16">
-            
-            <!-- Contact Info -->
-            <div class="lg:col-span-2">
-                <div class="bg-white p-10 shadow-xl rounded-sm border border-gray-100 h-full">
-                    <h3 class="text-2xl font-bold text-brand-navy heading-serif mb-8">Executive Office</h3>
-                    
-                    <div class="space-y-8">
-                        <div>
-                            <p class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2">Location</p>
-                            <p class="text-gray-800 font-medium leading-relaxed">123 Financial District<br>Suite 4000<br>Toronto, ON M1M 1M1</p>
-                        </div>
-                        
-                        <div>
-                            <p class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2">Direct Lines</p>
-                            <p class="text-gray-800 font-medium mb-1">T: <a href="tel:18005550199" class="hover:text-brand-gold transition-colors">1-800-555-0199</a></p>
-                            <p class="text-gray-800 font-medium mb-1">F: 1-800-555-0198</p>
-                            <p class="text-gray-800 font-medium">E: <a href="mailto:info@freedmanbroker.com" class="hover:text-brand-gold transition-colors">info@freedmanbroker.com</a></p>
-                        </div>
-
-                        <div>
-                            <p class="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-2">Hours</p>
-                            <p class="text-gray-800 font-medium">Mon-Fri: 8:30 AM - 5:30 PM</p>
-                            
-                            <div class="mt-6 p-4 bg-gray-50 border-l-2 border-brand-gold">
-                                <p class="text-brand-navy font-semibold text-sm mb-1">24/7 Concierge Support</p>
-                                <p class="text-gray-500 text-xs">Immediate claims assistance available exclusively for active clients.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Contact Form -->
-            <div class="lg:col-span-3">
-                <form class="bg-white p-10 shadow-xl rounded-sm border border-gray-100">
-                    <h2 class="text-2xl font-bold text-brand-navy heading-serif mb-8">Request a Portfolio Review</h2>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                        <div>
-                            <label class="block text-xs font-semibold uppercase tracking-wider text-gray-500 mb-2" for="first-name">First Name</label>
-                            <input type="text" id="first-name" class="w-full border-b border-gray-300 bg-transparent py-2 focus:outline-none focus:border-brand-gold transition-colors" required>
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold uppercase tracking-wider text-gray-500 mb-2" for="last-name">Last Name</label>
-                            <input type="text" id="last-name" class="w-full border-b border-gray-300 bg-transparent py-2 focus:outline-none focus:border-brand-gold transition-colors" required>
-                        </div>
-                    </div>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                        <div>
-                            <label class="block text-xs font-semibold uppercase tracking-wider text-gray-500 mb-2" for="email">Email Address</label>
-                            <input type="email" id="email" class="w-full border-b border-gray-300 bg-transparent py-2 focus:outline-none focus:border-brand-gold transition-colors" required>
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold uppercase tracking-wider text-gray-500 mb-2" for="phone">Phone Number</label>
-                            <input type="tel" id="phone" class="w-full border-b border-gray-300 bg-transparent py-2 focus:outline-none focus:border-brand-gold transition-colors">
-                        </div>
-                    </div>
-
-                    <div class="mb-8">
-                        <label class="block text-xs font-semibold uppercase tracking-wider text-gray-500 mb-2" for="interest">Area of Interest</label>
-                        <select id="interest" class="w-full border-b border-gray-300 bg-transparent py-2 focus:outline-none focus:border-brand-gold transition-colors text-gray-700">
-                            <option>Personal Wealth & Estate</option>
-                            <option>Commercial Enterprise</option>
-                            <option>Executive Liability</option>
-                            <option>General Inquiry</option>
-                        </select>
-                    </div>
-                    
-                    <div class="mb-8">
-                        <label class="block text-xs font-semibold uppercase tracking-wider text-gray-500 mb-2" for="message">Message (Optional)</label>
-                        <textarea id="message" rows="3" class="w-full border-b border-gray-300 bg-transparent py-2 focus:outline-none focus:border-brand-gold transition-colors resize-none"></textarea>
-                    </div>
-
-                    <button type="button" class="bg-brand-navy hover:bg-brand-gold text-white font-medium text-sm uppercase tracking-wider py-4 px-8 rounded-sm transition duration-300 w-full sm:w-auto shadow-md">
-                        Submit Inquiry
-                    </button>
-                </form>
-            </div>
-
-        </div>
-    </main>
         """
     }
 }
+
+try:
+    with open('personal-insurance.html', 'r') as f:
+        personal_content = f.read()
+        if '<div id="global-header"></div>' in personal_content:
+            personal_content = personal_content.split('<div id="global-header"></div>')[1].split('<div id="global-footer"></div>')[0]
+            PAGES["personal-insurance.html"] = {"title": "Personal Insurance | Freedman Broker", "active": "personal", "content": personal_content}
+        
+    with open('commercial-insurance.html', 'r') as f:
+        comm_content = f.read()
+        if '<div id="global-header"></div>' in comm_content:
+            comm_content = comm_content.split('<div id="global-header"></div>')[1].split('<div id="global-footer"></div>')[0]
+            PAGES["commercial-insurance.html"] = {"title": "Commercial Insurance | Freedman Broker", "active": "commercial", "content": comm_content}
+
+    with open('about-us.html', 'r') as f:
+        about_content = f.read()
+        if '<div id="global-header"></div>' in about_content:
+            about_content = about_content.split('<div id="global-header"></div>')[1].split('<div id="global-footer"></div>')[0]
+            PAGES["about-us.html"] = {"title": "Our Firm | Freedman Broker", "active": "about", "content": about_content}
+
+    with open('contact.html', 'r') as f:
+        contact_content = f.read()
+        if '<div id="global-header"></div>' in contact_content:
+            contact_content = contact_content.split('<div id="global-header"></div>')[1].split('<div id="global-footer"></div>')[0]
+            PAGES["contact.html"] = {"title": "Contact | Freedman Broker", "active": "contact", "content": contact_content}
+except Exception as e:
+    print(f"Error reading existing files: {e}")
 
 for filename, data in PAGES.items():
     html = f"""<!DOCTYPE html>
@@ -640,7 +352,7 @@ for filename, data in PAGES.items():
 </body>
 </html>"""
     
-    with open(filename, "w") as f:
+    with open(f"{filename}", "w") as f:
         f.write(html)
 
 print("Build complete.")
