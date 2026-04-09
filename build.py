@@ -40,7 +40,172 @@ HEAD_TAGS = """
         .nav-link:hover::after, .nav-link.active::after { width: 100%; }
         .nav-link:hover { color: #bf953f; }
     </style>
-    <script src="scripts.js"></script>
+"""
+
+HEADER = """
+    <!-- Top Bar -->
+    <div class="bg-brand-navy text-gray-300 text-xs sm:text-sm py-2 px-4 sm:px-6 lg:px-8 flex justify-between items-center border-b border-gray-800">
+        <div class="flex space-x-6">
+            <span class="flex items-center"><i class="fas fa-phone-alt mr-2 gold-accent"></i> 1-800-555-0199</span>
+            <span class="hidden sm:flex items-center"><i class="fas fa-envelope mr-2 gold-accent"></i> info@freedmanbroker.com</span>
+        </div>
+        <div class="flex space-x-5">
+            <a href="#" class="hover:text-brand-gold transition-colors duration-300"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="hover:text-brand-gold transition-colors duration-300"><i class="fab fa-twitter"></i></a>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50" x-data="{ mobileMenuOpen: false }">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="flex items-center group">
+                        <div class="w-10 h-10 bg-brand-navy flex items-center justify-center rounded-sm mr-3 group-hover:bg-brand-gold transition-colors duration-300">
+                            <i class="fas fa-shield-alt text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-brand-navy tracking-tight heading-serif leading-none">Freedman Broker</div>
+                            <div class="text-[0.65rem] uppercase tracking-[0.2em] text-gray-500 mt-1">Premium Insurance Services</div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-8 h-full items-center">
+                    <a href="index.html" class="text-gray-800 font-medium text-sm uppercase tracking-wide nav-link" data-page="home">Home</a>
+                    
+                    <!-- Personal Dropdown -->
+                    <div class="relative flex items-center h-full group" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+                        <a href="personal-insurance.html" class="text-gray-800 font-medium text-sm uppercase tracking-wide nav-link flex items-center" data-page="personal">
+                            Personal <i class="fas fa-chevron-down text-[0.6rem] ml-1.5 mt-0.5 text-gray-400 group-hover:text-brand-gold transition-colors"></i>
+                        </a>
+                        <div x-show="open" x-transition.opacity.duration.200ms class="absolute top-[80%] left-0 w-64 bg-white shadow-xl border border-gray-100 rounded-sm overflow-hidden py-2 z-50" style="display: none;">
+                            <a href="personal-insurance.html#auto" class="block px-6 py-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-brand-navy hover:pl-8 transition-all duration-300">Automobile Insurance</a>
+                            <a href="personal-insurance.html#home" class="block px-6 py-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-brand-navy hover:pl-8 transition-all duration-300">Home & Estate</a>
+                            <a href="personal-insurance.html#life" class="block px-6 py-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-brand-navy hover:pl-8 transition-all duration-300">Life & Health</a>
+                            <a href="personal-insurance.html#travel" class="block px-6 py-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-brand-navy hover:pl-8 transition-all duration-300">Travel Coverage</a>
+                        </div>
+                    </div>
+
+                    <!-- Commercial Dropdown -->
+                    <div class="relative flex items-center h-full group" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
+                        <a href="commercial-insurance.html" class="text-gray-800 font-medium text-sm uppercase tracking-wide nav-link flex items-center" data-page="commercial">
+                            Commercial <i class="fas fa-chevron-down text-[0.6rem] ml-1.5 mt-0.5 text-gray-400 group-hover:text-brand-gold transition-colors"></i>
+                        </a>
+                        <div x-show="open" x-transition.opacity.duration.200ms class="absolute top-[80%] left-0 w-64 bg-white shadow-xl border border-gray-100 rounded-sm overflow-hidden py-2 z-50" style="display: none;">
+                            <a href="commercial-insurance.html#liability" class="block px-6 py-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-brand-navy hover:pl-8 transition-all duration-300">General Liability</a>
+                            <a href="commercial-insurance.html#property" class="block px-6 py-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-brand-navy hover:pl-8 transition-all duration-300">Commercial Property</a>
+                            <a href="commercial-insurance.html#contractors" class="block px-6 py-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-brand-navy hover:pl-8 transition-all duration-300">Contractors & Trades</a>
+                            <a href="commercial-insurance.html#fleet" class="block px-6 py-3 text-sm text-gray-600 hover:bg-gray-50 hover:text-brand-navy hover:pl-8 transition-all duration-300">Fleet & Auto</a>
+                        </div>
+                    </div>
+
+                    <a href="about-us.html" class="text-gray-800 font-medium text-sm uppercase tracking-wide nav-link" data-page="about">Our Firm</a>
+                    <a href="contact.html" class="text-gray-800 font-medium text-sm uppercase tracking-wide nav-link" data-page="contact">Contact</a>
+                </nav>
+
+                <!-- CTA Button -->
+                <div class="hidden md:flex items-center">
+                    <a href="contact.html" class="bg-brand-navy hover:bg-brand-gold text-white px-7 py-2.5 rounded-sm font-medium text-sm tracking-wide transition-colors duration-300 shadow-md">
+                        Request Quote
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="flex items-center md:hidden">
+                    <button @click="mobileMenuOpen = !mobileMenuOpen" type="button" class="text-brand-navy hover:text-brand-gold focus:outline-none transition-colors">
+                        <i class="fas fa-bars text-2xl" x-show="!mobileMenuOpen"></i>
+                        <i class="fas fa-times text-2xl" x-show="mobileMenuOpen" x-cloak></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div x-show="mobileMenuOpen" class="md:hidden bg-white border-t border-gray-100 shadow-inner absolute w-full z-50" x-transition style="display: none;">
+            <div class="px-4 pt-4 pb-6 space-y-2">
+                <a href="index.html" class="block px-3 py-3 text-sm uppercase tracking-wide font-medium text-gray-900 hover:bg-gray-50 border-l-2 border-transparent hover:border-brand-gold" data-page="home">Home</a>
+                <a href="personal-insurance.html" class="block px-3 py-3 text-sm uppercase tracking-wide font-medium text-gray-900 hover:bg-gray-50 border-l-2 border-transparent hover:border-brand-gold" data-page="personal">Personal Insurance</a>
+                <a href="commercial-insurance.html" class="block px-3 py-3 text-sm uppercase tracking-wide font-medium text-gray-900 hover:bg-gray-50 border-l-2 border-transparent hover:border-brand-gold" data-page="commercial">Commercial Insurance</a>
+                <a href="about-us.html" class="block px-3 py-3 text-sm uppercase tracking-wide font-medium text-gray-900 hover:bg-gray-50 border-l-2 border-transparent hover:border-brand-gold" data-page="about">Our Firm</a>
+                <a href="contact.html" class="block px-3 py-3 text-sm uppercase tracking-wide font-medium text-gray-900 hover:bg-gray-50 border-l-2 border-transparent hover:border-brand-gold" data-page="contact">Contact</a>
+            </div>
+        </div>
+    </header>
+"""
+
+FOOTER = """
+    <!-- Footer -->
+    <footer class="bg-brand-navy text-white mt-auto pt-20 pb-10 border-t-4 border-gold-accent w-full">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+                <!-- Brand Info -->
+                <div class="md:col-span-4">
+                    <a href="index.html" class="flex items-center mb-6">
+                        <div class="w-8 h-8 bg-brand-gold flex items-center justify-center rounded-sm mr-3">
+                            <i class="fas fa-shield-alt text-brand-navy text-sm"></i>
+                        </div>
+                        <div>
+                            <div class="text-xl font-bold text-white tracking-tight heading-serif leading-none">Freedman Broker</div>
+                        </div>
+                    </a>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6 max-w-sm">
+                        An elite independent insurance brokerage dedicated to providing bespoke coverage solutions with uncompromising integrity and service.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-brand-gold hover:text-white transition-colors"><i class="fab fa-linkedin-in text-sm"></i></a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-brand-gold hover:text-white transition-colors"><i class="fab fa-twitter text-sm"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="md:col-span-2 md:col-start-6">
+                    <h4 class="text-white font-semibold mb-6 uppercase tracking-wider text-xs">Solutions</h4>
+                    <ul class="space-y-3">
+                        <li><a href="personal-insurance.html" class="text-gray-400 hover:text-brand-gold text-sm transition-colors">Personal Lines</a></li>
+                        <li><a href="commercial-insurance.html" class="text-gray-400 hover:text-brand-gold text-sm transition-colors">Commercial Lines</a></li>
+                        <li><a href="contact.html" class="text-gray-400 hover:text-brand-gold text-sm transition-colors">Request Quote</a></li>
+                    </ul>
+                </div>
+
+                <!-- Firm -->
+                <div class="md:col-span-2">
+                    <h4 class="text-white font-semibold mb-6 uppercase tracking-wider text-xs">The Firm</h4>
+                    <ul class="space-y-3">
+                        <li><a href="about-us.html" class="text-gray-400 hover:text-brand-gold text-sm transition-colors">Our Story</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-brand-gold text-sm transition-colors">Careers</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-brand-gold text-sm transition-colors">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="md:col-span-3">
+                    <h4 class="text-white font-semibold mb-6 uppercase tracking-wider text-xs">Contact</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start text-gray-400 text-sm">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3 text-brand-gold w-4 text-center"></i>
+                            <span>123 Financial District<br>Suite 4000<br>Toronto, ON M1M 1M1</span>
+                        </li>
+                        <li class="flex items-center text-gray-400 text-sm">
+                            <i class="fas fa-phone-alt mr-3 text-brand-gold w-4 text-center"></i>
+                            <a href="tel:18005550199" class="hover:text-white transition-colors">1-800-555-0199</a>
+                        </li>
+                        <li class="flex items-center text-gray-400 text-sm">
+                            <i class="fas fa-envelope mr-3 text-brand-gold w-4 text-center"></i>
+                            <a href="mailto:info@freedmanbroker.com" class="hover:text-white transition-colors">info@freedmanbroker.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-xs tracking-wide">
+                <p>&copy; 2024 Freedman Broker Insurance. All rights reserved.</p>
+                <p class="mt-2 md:mt-0">Licensed across Ontario, Canada.</p>
+            </div>
+        </div>
+    </footer>
 """
 
 PAGES = {
@@ -314,26 +479,34 @@ PAGES = {
 try:
     with open('personal-insurance.html', 'r') as f:
         personal_content = f.read()
-        if '<div id="global-header"></div>' in personal_content:
-            personal_content = personal_content.split('<div id="global-header"></div>')[1].split('<div id="global-footer"></div>')[0]
+        if '<!-- Page Header -->' in personal_content:
+            personal_content = personal_content[personal_content.index('<!-- Page Header -->'):]
+            if '<!-- Footer -->' in personal_content:
+                personal_content = personal_content.split('<!-- Footer -->')[0]
             PAGES["personal-insurance.html"] = {"title": "Personal Insurance | Freedman Broker", "active": "personal", "content": personal_content}
         
     with open('commercial-insurance.html', 'r') as f:
         comm_content = f.read()
-        if '<div id="global-header"></div>' in comm_content:
-            comm_content = comm_content.split('<div id="global-header"></div>')[1].split('<div id="global-footer"></div>')[0]
+        if '<!-- Page Header -->' in comm_content:
+            comm_content = comm_content[comm_content.index('<!-- Page Header -->'):]
+            if '<!-- Footer -->' in comm_content:
+                comm_content = comm_content.split('<!-- Footer -->')[0]
             PAGES["commercial-insurance.html"] = {"title": "Commercial Insurance | Freedman Broker", "active": "commercial", "content": comm_content}
 
     with open('about-us.html', 'r') as f:
         about_content = f.read()
-        if '<div id="global-header"></div>' in about_content:
-            about_content = about_content.split('<div id="global-header"></div>')[1].split('<div id="global-footer"></div>')[0]
+        if '<!-- Page Header -->' in about_content:
+            about_content = about_content[about_content.index('<!-- Page Header -->'):]
+            if '<!-- Footer -->' in about_content:
+                about_content = about_content.split('<!-- Footer -->')[0]
             PAGES["about-us.html"] = {"title": "Our Firm | Freedman Broker", "active": "about", "content": about_content}
 
     with open('contact.html', 'r') as f:
         contact_content = f.read()
-        if '<div id="global-header"></div>' in contact_content:
-            contact_content = contact_content.split('<div id="global-header"></div>')[1].split('<div id="global-footer"></div>')[0]
+        if '<!-- Page Header -->' in contact_content:
+            contact_content = contact_content[contact_content.index('<!-- Page Header -->'):]
+            if '<!-- Footer -->' in contact_content:
+                contact_content = contact_content.split('<!-- Footer -->')[0]
             PAGES["contact.html"] = {"title": "Contact | Freedman Broker", "active": "contact", "content": contact_content}
 except Exception as e:
     print(f"Error reading existing files: {e}")
@@ -346,9 +519,9 @@ for filename, data in PAGES.items():
     {HEAD_TAGS}
 </head>
 <body class="antialiased flex flex-col min-h-screen" data-page="{data['active']}">
-    <div id="global-header"></div>
+    {HEADER}
     {data['content']}
-    <div id="global-footer"></div>
+    {FOOTER}
 </body>
 </html>"""
     
