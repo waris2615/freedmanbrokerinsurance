@@ -476,43 +476,44 @@ PAGES = {
     }
 }
 
-try:
-    with open('personal-insurance.html', 'r') as f:
-        personal_content = f.read()
-        if '<!-- Page Header -->' in personal_content:
-            personal_content = personal_content[personal_content.index('<!-- Page Header -->'):]
-            if '<!-- Footer -->' in personal_content:
-                personal_content = personal_content.split('<!-- Footer -->')[0]
-            PAGES["personal-insurance.html"] = {"title": "Personal Insurance | Freedman Broker", "active": "personal", "content": personal_content}
+def main():
+    try:
+        with open('personal-insurance.html', 'r') as f:
+            personal_content = f.read()
+            if '<!-- Page Header -->' in personal_content:
+                personal_content = personal_content[personal_content.index('<!-- Page Header -->'):]
+                if '<!-- Footer -->' in personal_content:
+                    personal_content = personal_content.split('<!-- Footer -->')[0]
+                PAGES["personal-insurance.html"] = {"title": "Personal Insurance | Freedman Broker", "active": "personal", "content": personal_content.strip()}
         
-    with open('commercial-insurance.html', 'r') as f:
-        comm_content = f.read()
-        if '<!-- Page Header -->' in comm_content:
-            comm_content = comm_content[comm_content.index('<!-- Page Header -->'):]
-            if '<!-- Footer -->' in comm_content:
-                comm_content = comm_content.split('<!-- Footer -->')[0]
-            PAGES["commercial-insurance.html"] = {"title": "Commercial Insurance | Freedman Broker", "active": "commercial", "content": comm_content}
+        with open('commercial-insurance.html', 'r') as f:
+            comm_content = f.read()
+            if '<!-- Page Header -->' in comm_content:
+                comm_content = comm_content[comm_content.index('<!-- Page Header -->'):]
+                if '<!-- Footer -->' in comm_content:
+                    comm_content = comm_content.split('<!-- Footer -->')[0]
+                PAGES["commercial-insurance.html"] = {"title": "Commercial Insurance | Freedman Broker", "active": "commercial", "content": comm_content.strip()}
 
-    with open('about-us.html', 'r') as f:
-        about_content = f.read()
-        if '<!-- Page Header -->' in about_content:
-            about_content = about_content[about_content.index('<!-- Page Header -->'):]
-            if '<!-- Footer -->' in about_content:
-                about_content = about_content.split('<!-- Footer -->')[0]
-            PAGES["about-us.html"] = {"title": "Our Firm | Freedman Broker", "active": "about", "content": about_content}
+        with open('about-us.html', 'r') as f:
+            about_content = f.read()
+            if '<!-- Page Header -->' in about_content:
+                about_content = about_content[about_content.index('<!-- Page Header -->'):]
+                if '<!-- Footer -->' in about_content:
+                    about_content = about_content.split('<!-- Footer -->')[0]
+                PAGES["about-us.html"] = {"title": "Our Firm | Freedman Broker", "active": "about", "content": about_content.strip()}
 
-    with open('contact.html', 'r') as f:
-        contact_content = f.read()
-        if '<!-- Page Header -->' in contact_content:
-            contact_content = contact_content[contact_content.index('<!-- Page Header -->'):]
-            if '<!-- Footer -->' in contact_content:
-                contact_content = contact_content.split('<!-- Footer -->')[0]
-            PAGES["contact.html"] = {"title": "Contact | Freedman Broker", "active": "contact", "content": contact_content}
-except Exception as e:
-    print(f"Error reading existing files: {e}")
+        with open('contact.html', 'r') as f:
+            contact_content = f.read()
+            if '<!-- Page Header -->' in contact_content:
+                contact_content = contact_content[contact_content.index('<!-- Page Header -->'):]
+                if '<!-- Footer -->' in contact_content:
+                    contact_content = contact_content.split('<!-- Footer -->')[0]
+                PAGES["contact.html"] = {"title": "Contact | Freedman Broker", "active": "contact", "content": contact_content.strip()}
+    except Exception as e:
+        print(f"Error reading existing files: {e}")
 
-for filename, data in PAGES.items():
-    html = f"""<!DOCTYPE html>
+    for filename, data in PAGES.items():
+        html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>{data['title']}</title>
@@ -524,8 +525,11 @@ for filename, data in PAGES.items():
     {FOOTER}
 </body>
 </html>"""
-    
-    with open(f"{filename}", "w") as f:
-        f.write(html)
 
-print("Build complete.")
+        with open(f"{filename}", "w") as f:
+            f.write(html)
+
+    print("Build complete.")
+
+if __name__ == "__main__":
+    main()
