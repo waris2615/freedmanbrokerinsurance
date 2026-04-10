@@ -4,7 +4,7 @@ HEAD_TAGS = """
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.0/dist/cdn.min.js" integrity="sha384-O8NPfezTLQ/sgLfQYBJEnezJLlum9L6KOqHsfIWauzaFfD1TQSuvA4iUpgWGHeuZ" crossorigin="anonymous"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -472,42 +472,60 @@ PAGES = {
             </div>
         </div>
     </section>
-        """
+        """,
     }
 }
 
 try:
-    with open('personal-insurance.html', 'r') as f:
-        personal_content = f.read()
-        if '<!-- Page Header -->' in personal_content:
-            personal_content = personal_content[personal_content.index('<!-- Page Header -->'):]
-            if '<!-- Footer -->' in personal_content:
-                personal_content = personal_content.split('<!-- Footer -->')[0]
-            PAGES["personal-insurance.html"] = {"title": "Personal Insurance | Freedman Broker", "active": "personal", "content": personal_content}
-        
-    with open('commercial-insurance.html', 'r') as f:
-        comm_content = f.read()
-        if '<!-- Page Header -->' in comm_content:
-            comm_content = comm_content[comm_content.index('<!-- Page Header -->'):]
-            if '<!-- Footer -->' in comm_content:
-                comm_content = comm_content.split('<!-- Footer -->')[0]
-            PAGES["commercial-insurance.html"] = {"title": "Commercial Insurance | Freedman Broker", "active": "commercial", "content": comm_content}
 
-    with open('about-us.html', 'r') as f:
-        about_content = f.read()
-        if '<!-- Page Header -->' in about_content:
-            about_content = about_content[about_content.index('<!-- Page Header -->'):]
-            if '<!-- Footer -->' in about_content:
-                about_content = about_content.split('<!-- Footer -->')[0]
-            PAGES["about-us.html"] = {"title": "Our Firm | Freedman Broker", "active": "about", "content": about_content}
+    def extract_content(html_content):
+        if "<!-- Page Header -->" in html_content:
+            content = html_content[html_content.index("<!-- Page Header -->") :]
+            if "<!-- Footer -->" in content:
+                content = content.split("<!-- Footer -->")[0]
+            # Clean up trailing tags if they were accidentally captured
+            if "</body>" in content:
+                content = content.split("</body>")[0]
+            if "</html>" in content:
+                content = content.split("</html>")[0]
+            return content.strip()
+        return None
 
-    with open('contact.html', 'r') as f:
-        contact_content = f.read()
-        if '<!-- Page Header -->' in contact_content:
-            contact_content = contact_content[contact_content.index('<!-- Page Header -->'):]
-            if '<!-- Footer -->' in contact_content:
-                contact_content = contact_content.split('<!-- Footer -->')[0]
-            PAGES["contact.html"] = {"title": "Contact | Freedman Broker", "active": "contact", "content": contact_content}
+    with open("personal-insurance.html", "r") as f:
+        content = extract_content(f.read())
+        if content:
+            PAGES["personal-insurance.html"] = {
+                "title": "Personal Insurance | Freedman Broker",
+                "active": "personal",
+                "content": content,
+            }
+
+    with open("commercial-insurance.html", "r") as f:
+        content = extract_content(f.read())
+        if content:
+            PAGES["commercial-insurance.html"] = {
+                "title": "Commercial Insurance | Freedman Broker",
+                "active": "commercial",
+                "content": content,
+            }
+
+    with open("about-us.html", "r") as f:
+        content = extract_content(f.read())
+        if content:
+            PAGES["about-us.html"] = {
+                "title": "Our Firm | Freedman Broker",
+                "active": "about",
+                "content": content,
+            }
+
+    with open("contact.html", "r") as f:
+        content = extract_content(f.read())
+        if content:
+            PAGES["contact.html"] = {
+                "title": "Contact | Freedman Broker",
+                "active": "contact",
+                "content": content,
+            }
 except Exception as e:
     print(f"Error reading existing files: {e}")
 
@@ -524,7 +542,7 @@ for filename, data in PAGES.items():
     {FOOTER}
 </body>
 </html>"""
-    
+
     with open(f"{filename}", "w") as f:
         f.write(html)
 
